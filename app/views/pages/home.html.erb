@@ -1,2 +1,24 @@
 <h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+<div class = "container container-booking ">
+  <div class = "row">
+    <div class = "col-md-6 d-flex flex-column align-items-center">
+      <div class="card card-body mb-3" style="max-width: 540px;">
+        <div class="row g-0 ">
+          <div class="col-md-4">
+            <%= image_tag "logo.png"%>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class = col-md-6 >
+            <div class="card-body">
+              <h3 class="card-title">Êtes-vous majeur ?</h3>
+              <div>
+              <%= link_to 'Oui', root_path, class: 'btn btn-primary btn-show col-md-6' %>
+              <a class="btn-primary btn-show col-md-6" href="#">Non</a>
+              </div>
+            </div>
+    </div>
+  </div>
+</div>
