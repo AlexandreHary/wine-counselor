@@ -15,10 +15,15 @@
             <div class="card-body">
               <h3 class="card-title">Êtes-vous majeur ?</h3>
               <div>
-              <%= link_to 'Oui', root_path, class: 'btn btn-primary btn-show col-md-6' %>
+             <%# <%=  'Oui', chatroom_path(create), class: 'btn btn-primary btn-show col-md-6' %>
+             <%= simple_form_for @chatroom do |f| %>
+              <%= f.submit "Oui", class: "btn-primary btn-show col-md-6" %>
+             <% end %>
+
               <a class="btn-primary btn-show col-md-6" href="#">Non</a>
               </div>
             </div>
     </div>
   </div>
+
 </div>
