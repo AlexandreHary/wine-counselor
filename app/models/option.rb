@@ -5,5 +5,4 @@ class Option < ApplicationRecord
 
   validates :verbose, presence: true
   validates :small, presence: true
-
 end
