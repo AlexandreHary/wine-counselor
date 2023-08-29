@@ -1,2 +1,22 @@
 // Import page-specific CSS files here.
 @import "home";
+@import "font";
+
+h1, h2, h3, .title {
+  font-family: 'Lobster';
+}
+
+.body {
+  // background-image: ;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 100px;
+  padding-top: 70px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+p {
+ font-size: 14px;
+ padding-bottom: 10px;
+}
