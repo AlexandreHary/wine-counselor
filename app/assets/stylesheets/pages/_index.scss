@@ -1,22 +1,23 @@
 // Import page-specific CSS files here.
 @import "home";
-@import "font";
 
-h1, h2, h3, .title {
-  font-family: 'Lobster';
-}
-
-.body {
-  // background-image: ;
-  display: flex;
-  flex-direction: column;
+body {
+  font-family: $body-font;
   padding-bottom: 100px;
   padding-top: 70px;
   margin-left: 50px;
   margin-right: 50px;
 }
+.body {
+  background-image: url('bcimg.png');
+  background-size: cover;
+}
 
-p {
- font-size: 14px;
- padding-bottom: 10px;
+.home-page {
+  background-color: #ffffff !important; /* Utilisez la couleur que vous voulez */
+  background-size: cover;
+  width: 100%;
+  padding-bottom: 100px;
+  padding-top: 50px;
+  margin-bottom: 100px;
 }

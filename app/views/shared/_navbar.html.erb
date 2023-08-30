@@ -1,26 +1,29 @@
 <div class="fixed-top navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "logo.png", style: "border-radius: 50%;"%>
-    <% end %>
-    <h3 class="title-navbar ml-3">Wine Counselor </h3>
+    <div class="d-flex align-items-center">
+        <%= link_to root_path, class: "navbar-brand" do %>
+          <%= image_tag "logo.png", style: "border-radius: 50%;"%>
+        <% end %>
+      <h3 class="title-navbar ml-3">Wine Counselor </h3>
+    </div>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse dropdown" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
-          </li>
           <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
+            <%= link_to "Nouvelle recherche", "#", class: "nav-link" %>
           </li>
-          <li class="nav-item dropdown-toggle profile-picture">
+          <li class="nav-item profile-picture">
+            <!-- J'ai enlever dropdown-toggle à la li du dessus-->
             <%# if current_user.profile_picture.present? %>
                 <%#= image_tag current_user.profile_picture, data: { bs_toggle:"dropdown"},  aria_expanded: "false" %>
               <%# else %>
                 <%= image_tag "wine.png", data: { bs_toggle:"dropdown"},  aria_expanded: "false" %>
             <%# end %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <div class="text-center my-3">
+              <p><cite title="Bonjour <%= current_user.first_name %>" class="m-0 p-3 mx-0">Bonjour <%= current_user.first_name %></cite></p>
+            </div>
               <%= link_to "Action", "#", class: "dropdown-item" %>
               <%= link_to "Another action", "#", class: "dropdown-item" %>
               <%= link_to "Se déconnecter", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>

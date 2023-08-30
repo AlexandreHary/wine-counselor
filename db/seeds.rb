@@ -11,6 +11,7 @@ chatroom = Chatroom.create!(user: user_1)
 chatroom = Chatroom.create!(user: user_2)
 chatroom = Chatroom.create!(user: user_3)
 
+
 question_1 = Question.create!(title: "1. Quelle occasion ?", position: 1, last: false)
 question_2 = Question.create!(title: "2. Quel type de repas ? ", position: 2, last: false)
 question_3 = Question.create!(title: "3. Quelle couleur de vin ? (couleur)",position: 3, last: false)
@@ -36,4 +37,5 @@ option_3_q4 = Option.create!(question: question_4, verbose: 'vous préférez un 
 option_1_q5 = Option.create!(question: question_5, verbose: 'Vous préférez un vin', small: 'naturel')
 option_2_q5 = Option.create!(question: question_5, verbose: 'Vous préférez un vin', small: 'bio')
 option_3_q5 = Option.create!(question: question_5, verbose: 'Vous préférez un vin sans', small: 'sulfites')
+
 puts 'finished'
