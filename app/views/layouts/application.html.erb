@@ -2,24 +2,20 @@
 <html>
   <head>
     <title>Wine Counselor</title>
+    <link rel = "icon" href = "https://res.cloudinary.com/dpjincxmo/image/upload/v1692952884/logo_f9fgnh.png" type = "image/x-icon">
+
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-
-    <link rel="stylesheet" href="/app/assets/fonts.css">
   </head>
 
-  <body class='body'>
+  <body class="container-fluid body d-flex flex-column home-page">
     <%= render "shared/flashes" %>
     <%= render "shared/navbar" %>
-
-    <div class="container">
-      <h1 class="title">Notre super site web</h1>
-      <%= yield %>
-    </div>
+    <%= yield %>
     <%= render 'layouts/footer'%>
   </body>
 </html>
