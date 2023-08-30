@@ -1,16 +1,14 @@
-<h1>"hello"</h1>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chatroom</title>
+</head>
+<body>
   <div id="chatroom">
     <div id="messages">
-      <div class="chatroom-presentation">
-        <p>Bonjour</p>
-          <p>
-            Bienvenue dans l'univers du vin français guidé par la technologie - je suis le ChatBot Counselor. Expert dans le domaine, je suis là pour vous aider à choisir le vin parfait.
-            Des vins de Bordeaux aux charmes de la Bourgogne, je possède une connaissance approfondie sur les vins français.
-            Que vous soyez novice ou connaisseur, je vous guiderai vers des choix adaptés à vos goûts. Des accords mets-vins aux caractéristiques des régions, posez-moi vos questions et découvrez l'art du vin avec moi. 🍷</br>
       <!-- Messages will be displayed here -->
-          </p>
-      </div>
     </div>
     <div id="options">
       <!-- Options for answers will be displayed here -->
@@ -21,19 +19,16 @@
     const messagesContainer = document.getElementById("messages");
     const optionsContainer = document.getElementById("options");
 
-    // Simulated chat data (replace with actual data)
     const chatData = [
       {
-        type: "question",
-        content: "What is your favorite color?",
-        options: ["Red", "Blue", "Green"]
+        question: "Quelle occasion ?",
+        options: ["Option 1", "Option 2", "Option 3"]
       },
       {
-        type: "question",
-        content: "Which season do you like the most?",
-        options: ["Summer", "Fall", "Winter", "Spring"]
-      }
-      // Add more chat data here...
+        question: "Quel type de repas ?",
+        options: ["Option A", "Option B", "Option C"]
+      },
+      // Add more question data here...
     ];
 
     let currentQuestionIndex = 0;
@@ -43,7 +38,7 @@
 
       // Display the question
       const questionElement = document.createElement("div");
-      questionElement.textContent = questionData.content;
+      questionElement.textContent = questionData.question;
       messagesContainer.appendChild(questionElement);
 
       // Display the options
@@ -57,10 +52,11 @@
     }
 
     function handleOptionClick(selectedIndex) {
-      // Simulated answer submission (replace with actual logic)
-      console.log("Selected option:", chatData[currentQuestionIndex].options[selectedIndex]);
+      const selectedOption = chatData[currentQuestionIndex].options[selectedIndex];
 
-      // Move to the next question (if available)
+      // Send the selected option to the server for storage
+      saveUserAnswer(selectedOption);
+
       currentQuestionIndex++;
       if (currentQuestionIndex < chatData.length) {
         displayQuestionAndOptions();
@@ -70,7 +66,17 @@
       }
     }
 
-    // Start the chat by displaying the first question
+    function saveUserAnswer(selectedOption) {
+      fetch('/answers', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRF-Token': '<%= form_authenticity_token.to_s %>'
+        },
+        body: JSON.stringify({ answer: selectedOption })
+      });
+    }
+
     displayQuestionAndOptions();
   </script>
 </body>
