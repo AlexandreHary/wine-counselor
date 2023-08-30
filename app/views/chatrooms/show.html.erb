@@ -1,1 +1,77 @@
 <h1>"hello"</h1>
+
+  <div id="chatroom">
+    <div id="messages">
+      <div class="chatroom-presentation">
+        <p>Bonjour</p>
+          <p>
+            Bienvenue dans l'univers du vin français guidé par la technologie - je suis le ChatBot Counselor. Expert dans le domaine, je suis là pour vous aider à choisir le vin parfait.
+            Des vins de Bordeaux aux charmes de la Bourgogne, je possède une connaissance approfondie sur les vins français.
+            Que vous soyez novice ou connaisseur, je vous guiderai vers des choix adaptés à vos goûts. Des accords mets-vins aux caractéristiques des régions, posez-moi vos questions et découvrez l'art du vin avec moi. 🍷</br>
+      <!-- Messages will be displayed here -->
+          </p>
+      </div>
+    </div>
+    <div id="options">
+      <!-- Options for answers will be displayed here -->
+    </div>
+  </div>
+
+  <script>
+    const messagesContainer = document.getElementById("messages");
+    const optionsContainer = document.getElementById("options");
+
+    // Simulated chat data (replace with actual data)
+    const chatData = [
+      {
+        type: "question",
+        content: "What is your favorite color?",
+        options: ["Red", "Blue", "Green"]
+      },
+      {
+        type: "question",
+        content: "Which season do you like the most?",
+        options: ["Summer", "Fall", "Winter", "Spring"]
+      }
+      // Add more chat data here...
+    ];
+
+    let currentQuestionIndex = 0;
+
+    function displayQuestionAndOptions() {
+      const questionData = chatData[currentQuestionIndex];
+
+      // Display the question
+      const questionElement = document.createElement("div");
+      questionElement.textContent = questionData.content;
+      messagesContainer.appendChild(questionElement);
+
+      // Display the options
+      optionsContainer.innerHTML = "";
+      questionData.options.forEach((option, index) => {
+        const optionButton = document.createElement("button");
+        optionButton.textContent = option;
+        optionButton.addEventListener("click", () => handleOptionClick(index));
+        optionsContainer.appendChild(optionButton);
+      });
+    }
+
+    function handleOptionClick(selectedIndex) {
+      // Simulated answer submission (replace with actual logic)
+      console.log("Selected option:", chatData[currentQuestionIndex].options[selectedIndex]);
+
+      // Move to the next question (if available)
+      currentQuestionIndex++;
+      if (currentQuestionIndex < chatData.length) {
+        displayQuestionAndOptions();
+      } else {
+        messagesContainer.textContent = "No more questions.";
+        optionsContainer.innerHTML = "";
+      }
+    }
+
+    // Start the chat by displaying the first question
+    displayQuestionAndOptions();
+  </script>
+</body>
+</html>
