@@ -1,0 +1,15 @@
+.btn {
+  border-radius: 10px;
+  width: 100%;
+  text-transform: capitalize;
+}
+
+.btn:hover{
+  background-color: $white;
+  color: $red;
+  text-transform: capitalize;
+}
+
+.btn-show {
+  width: 40%;
+}

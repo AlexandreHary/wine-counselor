@@ -1,9 +1,20 @@
 // Import Google fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
 
+
+@font-face {
+  font-family: 'Cairo';
+  src: font-url('Cairo.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Lobster';
+  src: font-url('Lobster.otf') format('otf');
+}
+
 // Define fonts for body and headers
-$body-font: "Work Sans", "Helvetica", "sans-serif";
-$headers-font: "Nunito", "Helvetica", "sans-serif";
+$body-font: 'Cairo';
+$headers-font: 'Lobster';
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
