@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
 
-  resources :chatrooms, only: %i[show] do
+  resources :chatrooms, only: %i[show create] do
     resources :answers, only: %i[create]
     resources :bookings, only: %i[index]
   end
@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :wines, only: %i[] do
     resources :bookings, only: %i[create]
   end
+
   resources :bookings, only: %i[destroy]
 
   namespace :caviste do
