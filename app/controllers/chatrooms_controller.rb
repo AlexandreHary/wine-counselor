@@ -5,7 +5,7 @@ class ChatroomsController < ApplicationController
 
   def create
     @chatroom = Chatroom.create!(user: current_user)
-    redirect_to chatroom_path(@chatroom), notice: "Bienvenu sur WineCounselor!", status: :see_other
+    redirect_to chatroom_path(@chatroom), notice: "Bienvenue sur WineCounselor!", status: :see_other
   end
 
   private
