@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background-color: #A10000;
+  background: $red;
+  height: 50px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -19,7 +20,6 @@
 .dropdown-menu {
   background-color: #A10000;
   color: white;
-  // right: 0; /* Ensure the dropdown menu appears on the right */
 }
 
 .nav-item a {
@@ -28,9 +28,7 @@
 
 .title-navbar {
   color: white;
-  margin: 0; /* Remove default margin */
-  font-weight: bold;
-  
+  margin:0% !important;
 }
 
 .nav-link {
