@@ -17,8 +17,32 @@
                 <div class="card-text pt-2 pb-2">
                   <p class="card-text"><%= truncate(wine.description, length: 130, omission: '...') %></p>
                 </div>
-                <a class="btn btn-primary btn-wine col-md-6 " href="#">En savoir plus</a>
-                <%# <p ><strong> Appellation :</strong> <%= wine.appellation %></p>
+                <div class="text-center">
+                  <button class="btn btn-primary btn-wine col-md-6 " type="button" data-bs-toggle="modal" data-bs-target="#wineModal<%= wine.id %>" aria-controls="offcanvasExample">
+                    En savoir plus
+                  </button>
+                  <!-- ATTENTION BOOTSRATP MODAL V5
+                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel"><%= wine.name%></h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <p class="card-text"><%= wine.description %></p>
+                            <p><strong> Appellation :</strong> <%= wine.appellation %></p>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                            <button type="button" class="btn btn-primary btn-wine col-md-6">Ajouter à mes préférences</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    -->
+                  <!-- Fin modal -->
+                </div>
                 <a class="btn btn-primary btn-wine col-md-6" href="#">Ajouter à mes préférences</a>
                 <%#= link_to 'Détail wine', wine_path(@wine), class: 'btn btn-primary' %>
               </div>
