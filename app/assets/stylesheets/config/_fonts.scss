@@ -1,11 +1,5 @@
 // Import Google fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
-
-
-@font-face {
-  font-family: 'Cairo';
-  src: font-url('Cairo.ttf') format('ttf');
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Slab:wght@100&display=swap');
 
 @font-face {
   font-family: 'Lobster';
@@ -13,7 +7,7 @@
 }
 
 // Define fonts for body and headers
-$body-font: 'Cairo';
+$body-font: 'Roboto';
 $headers-font: 'Lobster';
 
 // To use a font file (.woff) uncomment following lines
