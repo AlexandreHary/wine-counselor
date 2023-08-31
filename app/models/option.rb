@@ -5,4 +5,8 @@ class Option < ApplicationRecord
 
   validates :verbose, presence: true
   validates :small, presence: true
+
+  def full_sentence
+    "#{self.verbose} #{self.small.downcase}"
+  end
 end

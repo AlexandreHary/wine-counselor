@@ -5,6 +5,9 @@ class ChatroomsController < ApplicationController
 
   def show
     @chatroom = Chatroom.find(params[:id])
+    @answer = Answer.new
+    @previous_answers = @chatroom.answers
+    @current_question = params[:next_question].present? ? Question.find(params[:next_question]) : Question.first
   end
 
   def create
