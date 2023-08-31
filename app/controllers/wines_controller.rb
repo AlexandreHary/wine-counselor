@@ -8,8 +8,9 @@ class WinesController < ApplicationController
   # def new
   # end
 
-  # def show
-  # end
+  def show
+    @wine = Wine.find_by(params[:id])
+  end
 
   # def create
   # end
