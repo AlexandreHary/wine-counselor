@@ -7,9 +7,9 @@ user_1 = User.create!(first_name: "Alex", last_name: "HARY", email: "alexandre@w
 user_2 = User.create!(first_name: "Joris", last_name: "CHENNA", email: "joris@winecounselor.com", password: "azerty2")
 user_3 = User.create!(first_name: "Enola", last_name: "LUKASIEWICZ", email: "enola@winecounselor.com", password: "azerty3")
 
-chatroom = Chatroom.create!(user: user_1)
-chatroom = Chatroom.create!(user: user_2)
-chatroom = Chatroom.create!(user: user_3)
+chatroom_1 = Chatroom.create!(user: user_1)
+chatroom_2 = Chatroom.create!(user: user_2)
+chatroom_3 = Chatroom.create!(user: user_3)
 
 question_1 = Question.create!(title: "Quelle occasion ?", position: 1, last: false)
 question_2 = Question.create!(title: "Quel type de repas ? ", position: 2, last: false)

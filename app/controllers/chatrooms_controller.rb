@@ -1,6 +1,8 @@
 class ChatroomsController < ApplicationController
   def show
     @chatroom = Chatroom.find(params[:id])
+    @answer = Answer.new
+    @question = @chatroom.current_question || Question.first
   end
 
   def create
