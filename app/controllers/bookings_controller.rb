@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
   def index
     @bookings = Booking.all
+    @wine=Wine.last #transformer.last en params etc
   end
 
   def create
