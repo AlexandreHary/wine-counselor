@@ -1,3 +1,19 @@
-<div class="card">
-  <%= image_tag "chateaumargeau.png", style: "width: 100px; height: auto;"%>
+<div class="col-lg-4 col-md-6 pb-4">
+  <div class="card border rounded position-relative">
+    <div class="mx-auto"><%= image_tag "chateaumargeau.png", class: 'card-bg-image pt-2' %></div>
+      <div class="card-body d-flex flex-column align-items-center gap-3">
+        <div class="card-haut">
+          <h4 class="card-title"> Chateau Margeau<%#= @wine.name.capitalize %></h4>
+          <div class="ligne"></div>
+        </div>
+        <div class="card-text">
+          <p class="card-text">Le Château Margeau incarne l'élégance et la tradition dans l'univers des vins fins. Niché au cœur d'un paysage pittoresque, ce domaine viticole de renom captive les sens avec son histoire riche et son art de l'œnologie raffiné.
+          <%#= truncate(@wine.description.capitalize, length: 70, separator: ' ', omission: '...') %></p>
+        </div>
+        <a class="btn btn-primary btn-wine col-md-6 mt-1" href="#">En savoir plus</a>
+        <a class="btn btn-primary btn-wine col-md-6 mt-1" href="#">Ajouter à mes préférences</a>
+        <%#= link_to 'Détail wine', wine_path(@wine), class: 'btn btn-primary' %>
+      </div>
+    </div>
+  </div>
 </div>
