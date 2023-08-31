@@ -18,7 +18,7 @@ question_1 = Question.create!(title: "1. Quelle occasion ?", position: 1, last: 
 question_2 = Question.create!(title: "2. Quel type de repas ? ", position: 2, last: false)
 question_3 = Question.create!(title: "Quelle couleur de vin ?", position: 3, last: false)
 question_4 = Question.create!(title: "4. Quel gout ? - Leger / fort ? – fruité / tanique", position: 4, last: false)
-question_5 = Question.create!(title: "5. Voulez-vous un vin bio, vin naturel, vin sans sulfites" , position: 5, last: true )
+question_5 = Question.create!(title: "5. Voulez-vous un vin bio, vin naturel, vin sans sulfites" , position: 5, last: true)
 
 option_1_q1 = Option.create!(question: question_1, verbose: 'Plutôt en', small: 'Famille')
 option_2_q1 = Option.create!(question: question_1, verbose: 'Plutôt entre', small: 'amis')
