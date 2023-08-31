@@ -1,5 +1,24 @@
+<div id="chatroom">
+  <div id="messages">
+    <div class="chatroom-presentation">
+      <p>Bonjour</p>
+        <p>
+          Bienvenue dans l'univers du vin français guidé par la technologie - je suis le ChatBot Counselor. Expert dans le domaine, je suis là pour vous aider à choisir le vin parfait.
+          Des vins de Bordeaux aux charmes de la Bourgogne, je possède une connaissance approfondie sur les vins français.
+          Que vous soyez novice ou connaisseur, je vous guiderai vers des choix adaptés à vos goûts. Des accords mets-vins aux caractéristiques des régions, posez-moi vos questions et découvrez l'art du vin avec moi. 🍷
+        </p>
+        <br>
+      <% @previous_answers.each do |answer| %>
+        <p><%= answer.associated_question.title %></p>
+        <p><%= answer.option.full_sentence %></p>
+      <% end %>
+    <%= simple_form_for [@chatroom, @answer] do |f| %>
+      <%= f.input :option, as: :radio_buttons, collection: @current_question.options.map {|option| [option.full_sentence, option.id] } %>
+      <%= f.submit %>
+    <% end %>
+    </div>
+  </div>
+</div>
 
 <!-- Partie Enola -->
-<div>
-  <%= link_to "afficher la selection de vins", chatroom_wines_path(@chatroom) %>
-</div>
+   <%#= link_to "afficher la selection de vins", chatroom_wines_path(@chatroom) %>
