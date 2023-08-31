@@ -1,0 +1,15 @@
+.door {
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/dpjincxmo/image/upload/v1693479841/Capture_d_e%CC%81cran_2023-08-31_a%CC%80_13.01.39_ickejt.png);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  padding-bottom: 30px;
+  padding-top: 50px;
+  min-height: calc(100vh - 80px);
+  min-width: calc(100vw - 80px);
+}
+
+
+.hide {
+  display: none;
+}
