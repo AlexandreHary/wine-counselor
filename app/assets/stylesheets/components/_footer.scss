@@ -1,32 +1,23 @@
 .footer {
-  background: #A10000;
-  color: white;
+  background: $red;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 30px;
   padding: 0px 50px;
-  margin: 0; /* Remove default margin */
-}
-
-p {
-  margin: 0;
+  color: $white;
   font-size: 12px;
-  padding: 0px 10px;
-  align-items: center;
 }
 
 .footer-links {
   display: flex;
   align-items: center;
-  color: white;
 }
-
 .footer-links a {
-  color: white;
-  opacity: 0.2;
+  color: $white;
+  opacity: 0.75;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 12px;
   padding: 0px 10px;
 }
 .footer-links a:hover {

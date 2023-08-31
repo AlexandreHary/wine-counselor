@@ -1,13 +1,18 @@
 class ChatroomsController < ApplicationController
+  def new
+    @chatroom = Chatroom.new
+  end
+
   def show
     @chatroom = Chatroom.find(params[:id])
     @answer = Answer.new
-    @question = @chatroom.current_question || Question.first
+    @previous_answers = @chatroom.answers
+    @current_question = params[:next_question].present? ? Question.find(params[:next_question]) : Question.first
   end
 
   def create
     @chatroom = Chatroom.create!(user: current_user)
-    redirect_to chatroom_path(@chatroom), notice: "Bienvenue sur WineCounselor!", status: :see_other
+    redirect_to chatroom_path(@chatroom), notice: "Bienvenue sur WineCounselor !", status: :see_other
   end
 
   private

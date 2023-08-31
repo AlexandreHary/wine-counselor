@@ -17,9 +17,17 @@
           Que vous soyez novice ou connaisseur, je vous guiderai vers des choix adaptés à vos goûts. Des accords mets-vins aux caractéristiques des régions, posez-moi vos questions et découvrez l'art du vin avec moi. 🍷
         </p>
         <br>
-    <%= @question.title %>
+      <% @previous_answers.each do |answer| %>
+        <p><%= answer.associated_question.title %></p>
+        <p><%= answer.option.full_sentence %></p>
+      <% end %>
     <%= simple_form_for [@chatroom, @answer] do |f| %>
-      <%= f.association :option, as: :radio_buttons, collection: @question.options.map(&:small) %>
+      <%= f.input :option, as: :radio_buttons, collection: @current_question.options.map {|option| [option.full_sentence, option.id] } %>
       <%= f.submit %>
     <% end %>
+    </div>
+  </div>
 </div>
+
+<!-- Partie Enola -->
+   <%#= link_to "afficher la selection de vins", chatroom_wines_path(@chatroom) %>
