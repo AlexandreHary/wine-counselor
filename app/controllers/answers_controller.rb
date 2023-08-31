@@ -1,19 +1,22 @@
 class AnswersController < ApplicationController
   def create
-    @option = Option.find_by(small: answer_params[:option_id])
+    @option = Option.find(answer_params[:option])
     @chatroom = Chatroom.find(params[:chatroom_id])
     @answer = Answer.new(option: @option, chatroom: @chatroom)
     if @answer.save
-      redirect_to chatroom_path(@chatroom)
+      if @answer.associated_question.last
+        redirect_to chatroom_wines_path
+      else
+        redirect_to chatroom_path(@chatroom, next_question: @option.question.next_question)
+      end
     else
       render 'chatrooms/show', status: :unprocessable_entity
-      @question = @option.question
     end
   end
 
   private
 
   def answer_params
-    params.require(:answer).permit(:option_id, :chatroom_id)
+    params.require(:answer).permit(:option)
   end
 end
