@@ -8,6 +8,9 @@ class ChatroomsController < ApplicationController
     @answer = Answer.new
     @previous_answers = @chatroom.answers
     @current_question = params[:next_question].present? ? Question.find(params[:next_question]) : Question.first
+    if @current_question.position > 1
+      @hide = true
+    end
   end
 
   def create

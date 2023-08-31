@@ -18,3 +18,23 @@
   width: 100%;
   font-size: 12px;
 }
+
+.btn-door {
+  width: 30%;
+  font-size: 28px;
+  background-color: #dca6a623;
+  color: $white;
+  font-family: 'Lobster';
+  margin-top: 400px;
+  margin-left: 492px;
+  text-transform: uppercase;
+  border: 5px;
+  box-shadow: 5px;
+}
+
+.btn-door:hover{
+  background-color: $white;
+  color: $red;
+  text-transform: uppercase;
+  font-family: 'Lobster';
+}
