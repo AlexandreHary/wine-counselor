@@ -1,0 +1,40 @@
+.card {
+  border: 1px solid #000439;
+  border-radius: 15px !important;
+  box-shadow: 5px 5px 10px rgba(161, 0, 0, 0.5);
+  height: 470px;
+  padding-bottom: 25px;
+}
+
+.card-display {
+  height: 500px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.card-body {
+  height: 100%;
+  font-size: 12px;
+  padding-bottom: 25px
+}
+
+/* Style pour les images de fond des cartes */
+.card-bg-image {
+  background-size: cover;
+  background-position: center;
+  border-radius: 7px;
+  height: 150px;
+  width: 250px;
+}
+
+
+.card-title {
+  color: $red;
+  font-family: 'Lobster';
+  font-weight: bold;
+}
+
+.ligne {
+  border-bottom: 1px solid $red;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+}

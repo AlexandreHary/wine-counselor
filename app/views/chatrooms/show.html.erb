@@ -17,4 +17,6 @@
       <%= f.input :option, as: :radio_buttons, collection: @current_question.options.map {|option| [option.full_sentence, option.id] } %>
       <%= f.submit %>
     <% end %>
+    </div>
+  </div>
 </div>

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :wines, only: %i[index]
     resources :answers, only: %i[create]
     resources :bookings, only: %i[index]
+    resources :wines, only: %i[index]
   end
 
   resources :wines, only: %i[] do

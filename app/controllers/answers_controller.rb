@@ -19,4 +19,10 @@ class AnswersController < ApplicationController
   def answer_params
     params.require(:answer).permit(:option)
   end
+
+  # private
+
+  # def answer_params
+  #   params.require(:answer).permit(:content)
+  # end
 end
