@@ -1,9 +1,9 @@
 /* Styles for chat containers */
 .chat-container {
   display: flex;
+  position: relative;
   align-items: flex-start;
   margin: 20px;
-  position: relative; /* Ajoutez cette ligne */
 }
 
 /* Styles for avatars */
