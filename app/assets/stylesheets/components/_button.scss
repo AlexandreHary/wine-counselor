@@ -4,7 +4,7 @@
   text-transform: uppercase;
 }
 
-.btn:hover{
+.btn:hover {
   background-color: $white;
   color: $red;
   text-transform: uppercase;
@@ -37,4 +37,21 @@
   color: $red;
   text-transform: uppercase;
   font-family: 'Lobster';
+}
+
+.btn-valid {
+  width: 15%;
+  background-color: $red;
+  color: $white;
+  font-family: 'Lobster';
+  border:  black;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.btn-valid:hover {
+  background-color: $white;
+  color: $red;
+  font-family: 'Lobster';
+  border-radius: 5px;
 }
