@@ -1,3 +1,27 @@
+
+.chatroom-label {
+
+  &:hover {
+    background-color: $white;
+    color: $red;
+    font-family: 'Lobster';
+    border-radius: 5px;
+  }
+
+  label {
+    padding: 1em;
+    color: $white;
+    background-color: $red;
+    font-family: 'Lobster';
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}
+
+.chatroom-input:checked + label {
+  background-color: $white;
+  color: black
+
 .chatroom_container {
   background-color: #0b0808; /* Couleur de fond de la chatroom */
   padding: 40px;
@@ -48,4 +72,5 @@
   height: 50px; /* Ajustez la taille de l'avatar selon vos besoins */
   border-radius: 50%; /* Crée un avatar circulaire */
   margin-right: 10px; /* Espacement entre l'avatar et la bulle */
+
 }
