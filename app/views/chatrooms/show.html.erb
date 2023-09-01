@@ -1,55 +1,40 @@
-<!-- Ouverture porte - trouver mon vin -->
-
-<div class='door <%= "hide" if @hide%>' data-controller="display-none" data-display-none-target="div">
-  <div class="container" >
-    <a class="btn btn-door" data-action="click->display-none#disable" >Trouver mon vin</a>
-  </div>
-</div>
-
-<!-- Début chatroom -->
 <div class="chatroom_container">
   <div id="chatroom">
     <div id="messages">
-    <div class="avatar-bubble">
-        <img src="https://res.cloudinary.com/dpjincxmo/image/upload/v1693566676/wineCounselor_drhifh.png" class="avatar" alt="winecounselor">
-      <div class="bubble_question">
-        <p>Bonjour <%= current_user.first_name %></p>
+      <!-- Loop through previous answers -->
+      <% @previous_answers.each do |answer| %>
+      <div class="chat-container">
+        <img src="https://res.cloudinary.com/dpjincxmo/image/upload/v1693566676/wineCounselor_drhifh.png" class="avatar_question" alt="winecounselor">
+        <div class="bubble_question">
+          <div class="arrow"></div>
+          <p class='text-black'><%= answer.associated_question.title %></p>
+        </div>
+        <div class="bubble_answer">
+          <p class='text-black'><%= answer.option.full_sentence %></p>
+        </div>
       </div>
-      </div>
-       <div class="avatar-bubble">
-        <img src="https://res.cloudinary.com/dpjincxmo/image/upload/v1693566676/wineCounselor_drhifh.png" class="avatar" alt="winecounselor">
-          <div class="bubble_question">
-            <p>
-              Bienvenue dans l'univers du vin français guidé par la technologie - je suis votre conseiller en vin. Expert dans le domaine, je suis là pour vous aider à choisir le vin parfait.
-              Des vins de Bordeaux aux charmes de la Bourgogne, je possède une connaissance approfondie sur les vins français.
-              Que vous soyez novice ou connaisseur, je vous guiderai vers des choix adaptés à vos goûts. Des accords mets-vins aux caractéristiques des régions, posez-moi vos questions et découvrez l'art du vin avec moi. 🍷
-            </p>
-      </div>
-      </div>
-<div class="avatar-bubble">
-        <img src="https://res.cloudinary.com/dpjincxmo/image/upload/v1693566676/wineCounselor_drhifh.png" class="avatar" alt="winecounselor">
+      <% end %>
 
-  <% @previous_answers.each do |answer| %>
-    <div class="bubble_question">
-      <p class='text-black'><%= answer.associated_question.title %></p>
-    </div>
-    <div class="bubble_answer">
-      <p class='text-black'><%= answer.option.full_sentence %></p>
-    </div>
-  <% end %>
+      <!-- Current question -->
+      <div class="chat-container">
+        <img src="https://res.cloudinary.com/dpjincxmo/image/upload/v1693566676/wineCounselor_drhifh.png" class="avatar_question" alt="winecounselor">
+        <div class="bubble_question">
+          <p class='text-black'><%= @current_question.title %></p>
+        </div>
+      </div>
 
-  <div class="bubble_question">
-    <p class='text-black'><%= @current_question.title %></p>
-  </div>
+      <%= simple_form_for [@chatroom, @answer], html: { class: 'd-flex, w-100' } do |f| %>
+          <%= f.input :option,
+                      as: :radio_buttons,
+                      legend_tag: false,
+                      input_html: { class: 'chatroom-input sr-only'},
+                      wrapper_html: { class: 'd-flex justify-content-center gap-3'},
+                      item_wrapper_class: 'chatroom-label',
+                      collection: @current_question.options.map {|option| [option.full_sentence, option.id] } %>
+          <%= f.submit "Valider mon choix", class: "btn-valid d-block mx-auto" %>
+      <% end %>
 
-  <div class="bubble_answer"> <!-- Ouvrez une nouvelle div pour la question actuelle et les options -->
-    <%= simple_form_for [@chatroom, @answer] do |f| %>
-      <%= f.input :option,
-                  as: :radio_buttons,
-                  item_wrapper_class: 'text-black',
-                  collection: @current_question.options.map {|option| [option.full_sentence, option.id] } %>
-      <%= f.submit %>
-    </div> <!-- Fermez la div pour les options de la question actuelle -->
-  </div>
-  <%end%>
-</div>
+    </div> <!-- Close the "messages" div -->
+  </div> <!-- Close the "chatroom" div -->
+</div> <!-- Close the "chatroom_container" div -->
+</body>
