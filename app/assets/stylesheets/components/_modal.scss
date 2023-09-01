@@ -1,0 +1,27 @@
+.modal-text {
+  font-size: 14px;
+  text-align: left;
+}
+
+.modal-image img {
+  border-radius: 7px;
+  height: 250px;
+  width: 300px;
+  object-fit: cover;
+  border-radius: 15px !important;
+}
+
+.modal-title {
+  color: black !important;
+}
+
+.modal-subtitle {
+  text-align: left !important;
+}
+
+.modal-lign {
+  border-bottom: 1px solid $red;
+  width: 450px;
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.3);
+  align-items: center;
+}

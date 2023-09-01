@@ -12,7 +12,7 @@
             <div class="card-body d-flex flex-column align-items-center gap-3">
               <div>
                 <h4 class="card-title"> <%= truncate(wine.name, length: 25, omission: '...') %></h4>
-                <div class="ligne">
+                <div class="lign">
                 </div>
                 <div class="card-text pt-2 pb-2">
                   <p class="card-text"><%= truncate(wine.description, length: 130, omission: '...') %></p>
@@ -21,29 +21,47 @@
                   <button class="btn btn-primary btn-wine col-md-6 " type="button" data-bs-toggle="modal" data-bs-target="#wineModal<%= wine.id %>" aria-controls="offcanvasExample">
                     En savoir plus
                   </button>
-                  <!-- ATTENTION BOOTSRATP MODAL V5
-                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                      <div class="modal-dialog">
+                  <!-- ATTENTION BOOTSRATP MODAL V5-->
+                  <!-- Vertically centered modal -->
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal fade" id="wineModal<%= wine.id %>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered modal-xl rounded">
                         <div class="modal-content">
-                          <div class="modal-header">
-                            <h5 class="modal-title" id="staticBackdropLabel"><%= wine.name%></h5>
+                          <div class="modal-header text-center">
+                            <h2 class="modal-title" id="staticBackdropLabel"><%= wine.name%></h2>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                           </div>
                           <div class="modal-body">
-                            <p class="card-text"><%= wine.description %></p>
-                            <p><strong> Appellation :</strong> <%= wine.appellation %></p>
+                            <div class="container-fluid">
+                              <div class="row">
+                                <!-- debut -->
+                                <div class="col">
+                                  <% if wine.wine_photo.present? %>
+                                      <div class="modal-image pt-2 mx-auto"><%= cl_image_tag wine.wine_photo.key, width: 150, height: 150%></div>
+                                    <% else %>
+                                      <div class="modal-image pt-2 mx-auto" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= image_path "wine.png" %>'); max-height: 150px; max-width: 260px;;"></div>
+                                  <% end %>
+                                </div>
+                                <div class="col">
+                                  <h3 class="modal-subtitle pb-2"><%= wine.appellation %></h3>
+                                  <p class="modal-text pb-2"><em><%= wine.year %></em></p>
+                                  <div class="modal-lign">
+                                  </div>
+                                  <p class="modal-text pt-3"><%= wine.description %></p>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                           <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-                            <button type="button" class="btn btn-primary btn-wine col-md-6">Ajouter à mes préférences</button>
+                            <button type="button" class="btn btn-primary btn-modal col-md-6">Ajouter à mes préférences</button>
                           </div>
                         </div>
                       </div>
                     </div>
-                    -->
+                  </div>
                   <!-- Fin modal -->
                 </div>
-                <a class="btn btn-primary btn-wine col-md-6" href="#">Ajouter à mes préférences</a>
+                <a class="btn btn-primary btn-wine col-md-6 mt-2" href="#">Ajouter à mes préférences</a>
                 <%#= link_to 'Détail wine', wine_path(@wine), class: 'btn btn-primary' %>
               </div>
             </div>
