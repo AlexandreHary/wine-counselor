@@ -26,11 +26,16 @@
   background-color: #dca6a623;
   color: $white;
   font-family: 'Lobster';
-  margin-top: 400px;
-  margin-left: 492px;
+  // margin-top: 400px;
+  // margin-left: 492px;
   text-transform: uppercase;
   border: 5px;
   box-shadow: 5px;
+  position: absolute;
+  top: 50%; /* Placez le bouton à 50% du haut de son conteneur parent */
+  left: 50%; /* Placez le bouton à 50% de la gauche de son conteneur parent */
+  transform: translate(-50%, -50%); /* Utilisez transform pour le centrer parfaitement */
+  z-index: 1;
 }
 
 .btn-door:hover{

@@ -8,7 +8,9 @@ export default class extends Controller {
   }
 
   disable() {
-    console.log(this.divTarget)
-    this.divTarget.classList.add("hide")
+    console.log(this.divTargets)
+    this.divTargets.forEach((target)=>{
+      target.classList.add("hide");
+    })
   }
 }

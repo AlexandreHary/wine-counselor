@@ -1,3 +1,17 @@
+<!-- Ouverture porte - trouver mon vin -->
+<div class="door" data-controller="display-none">
+  <div class='door-left <%= "hide" if @hide%>' data-display-none-target="div">
+    <div class="door-container" >
+    </div>
+  </div>
+  <div class='door-right <%= "hide" if @hide%>' data-display-none-target="div">
+    <div class="door-container" >
+    </div>
+  </div>
+  <a class='btn btn-door mx-auto <%= "hide" if @hide%>' data-display-none-target="div" data-action="click->display-none#disable" >Trouver mon vin</a>
+</div>
+
+<!-- Début chatroom -->
 <div class="chatroom_container">
   <div id="chatroom">
     <div id="messages">
