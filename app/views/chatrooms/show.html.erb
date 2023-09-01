@@ -25,12 +25,15 @@
         <% end %>
         <p class='text-white'><%= @current_question.title %></p>
         <%= simple_form_for [@chatroom, @answer] do |f| %>
-        <%= f.input :option,
-                    as: :radio_buttons,
-                    item_wrapper_class: 'text-white',
-                    collection: @current_question.options.map {|option| [option.full_sentence, option.id] } %>
+          <%= f.input :option,
+                      as: :radio_buttons,
+                      legend_tag: false,
+                      input_html: { class: 'chatroom-input sr-only'},
+                      wrapper_html: { class: 'd-flex justify-content-start gap-3'},
+                      item_wrapper_class: 'chatroom-label',
+                      collection: @current_question.options.map {|option| [option.full_sentence, option.id] } %>
 
-        <%= f.submit "Valider mon choix", class: "btn-valid" %>
+          <%= f.submit "Valider mon choix", class: "btn-valid" %>
       <% end %>
     </div>
   </div>
