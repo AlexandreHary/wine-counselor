@@ -1,5 +1,5 @@
 <!-- Ouverture porte - trouver mon vin -->
-<div class="door" data-controller="display-none">
+<div class="door <%= "hide" if @hide%>" data-controller="display-none" data-display-none-target="div">
   <div class='door-left <%= "hide" if @hide%>' data-display-none-target="div">
     <div class="door-container" >
     </div>
