@@ -1,51 +1,76 @@
-.chatroom_container {
-  background-color: #0b0808; /* Couleur de fond de la chatroom */
-  padding: 40px;
-  margin-top: 20px;;
-  border-radius: 20px;
+/* Styles for chat containers */
+.chat-container {
   display: flex;
-  justify-content: center; /* Centre horizontalement */
-  align-items: center; /* Centre verticalement */
+  align-items: flex-start;
+  margin: 20px;
+  position: relative; /* Ajoutez cette ligne */
 }
 
+/* Styles for avatars */
+.avatar_question {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+/* Styles for question bubbles (including arrow) */
 .bubble_question {
-  position: relative;
-  width: 100%;
+  width: calc(100% - 60px); /* Adjust the width to accommodate the avatar */
   padding: 20px;
   background-color: #f9f7dd;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  margin : 20px;
+  position: relative; /* Ajoutez cette ligne */
+
+  /* Add the arrow styles here */
+  &::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #f9f7dd;
+    left: -7px;
+    top: 32%;
+    transform: translateY(12%);
+    z-index: 1;
+  }
 }
 
-.bubble_question::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: 100%; /* Changer 'left' en 'right' */
-  margin-top: -10px; /* Ajuster en fonction de la taille de la flèche */
-  border-width: 10px;
-  border-style: solid;
-  border-color: transparent #f0f0f0 transparent transparent; /* Inverser l'ordre des couleurs */
-}
+/* Styles for answer bubbles */
 .bubble_answer {
-  position: relative;
   width: 100%;
   padding: 20px;
   background-color: #f0f0f0;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  margin : 20px;
+  margin-top: 100px; /* Add margin to separate answers */
+  position: relative; /* Ajoutez cette ligne */
 }
 
-.avatar-bubble {
-  display: flex;
-  align-items: center;
+
+.chatroom-label {
+
+  &:hover {
+    background-color: $white;
+    color: $red;
+    font-family: 'Lobster';
+    border-radius: 5px;
+  }
+
+  label {
+    padding: 1em;
+    color: white;
+    background-color: $red;
+    font-family: 'Lobster';
+    border-radius: 5px;
+    cursor: pointer;
+  }
 }
 
-.avatar {
-  width: 50px; /* Ajustez la taille de l'avatar selon vos besoins */
-  height: 50px; /* Ajustez la taille de l'avatar selon vos besoins */
-  border-radius: 50%; /* Crée un avatar circulaire */
-  margin-right: 10px; /* Espacement entre l'avatar et la bulle */
+.chatroom-input:checked + label {
+  background-color: $white;
+  color: black
 }
