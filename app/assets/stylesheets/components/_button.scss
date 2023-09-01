@@ -2,6 +2,7 @@
   border-radius: 10px;
   width: 100%;
   text-transform: uppercase;
+  font-family: 'Lobster';
 }
 
 .btn:hover {
@@ -39,6 +40,7 @@
   font-family: 'Lobster';
 }
 
+
 .btn-valid {
   width: 15%;
   background-color: $red;
@@ -54,4 +56,8 @@
   color: $red;
   font-family: 'Lobster';
   border-radius: 5px;
+
+.btn-modal {
+  width: 50%;
+  font-size: 14px;
 }

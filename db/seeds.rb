@@ -1,5 +1,7 @@
 Answer.destroy_all
+WineTag.destroy_all
 Wine.destroy_all
+OptionTag.destroy_all
 Option.destroy_all
 Question.destroy_all
 Chatroom.destroy_all
