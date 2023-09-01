@@ -1,9 +1,14 @@
 <!-- Ouverture porte - trouver mon vin -->
-
-<div class='door <%= "hide" if @hide%>' data-controller="display-none" data-display-none-target="div">
-  <div class="container" >
-    <a class="btn btn-door" data-action="click->display-none#disable" >Trouver mon vin</a>
+<div class="door" data-controller="display-none">
+  <div class='door-left <%= "hide" if @hide%>' data-display-none-target="div">
+    <div class="door-container" >
+    </div>
   </div>
+  <div class='door-right <%= "hide" if @hide%>' data-display-none-target="div">
+    <div class="door-container" >
+    </div>
+  </div>
+  <a class='btn btn-door mx-auto <%= "hide" if @hide%>' data-display-none-target="div" data-action="click->display-none#disable" >Trouver mon vin</a>
 </div>
 
 <!-- Début chatroom -->
