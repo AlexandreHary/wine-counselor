@@ -1,3 +1,11 @@
 <h1 class='text-center pt-4 pb-3'>Notre selection de vins</h1>
 
 <%= render 'wine_card' %>
+<div>
+  <p class="text-white"><%= "#{@bookings.count} préférences ajoutées" %></p>
+  <% @bookings.each do |booking| %>
+    <p><%= booking.wine.name %></p>
+  <% end %>
+</div>
+
+<%= link_to "VALIDER",  chatroom_bookings_path, class: "btn btn-primary btn-pref"%>

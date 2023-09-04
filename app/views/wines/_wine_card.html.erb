@@ -52,8 +52,7 @@
                               </div>
                             </div>
                           </div>
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-primary btn-modal col-md-6">Ajouter à mes préférences</button>
+                            <div class="modal-footer">
                           </div>
                         </div>
                       </div>
@@ -61,12 +60,12 @@
                   </div>
                   <!-- Fin modal -->
                 </div>
-                <a class="btn btn-primary btn-wine col-md-6 mt-2" href="#">Ajouter à mes préférences</a>
+                 <%= button_to "Ajouter à mes préférences", chatroom_bookings_path(@chatroom, wine: wine), class: "btn btn-primary btn-wine col-md-6 mt-2", method: :post %>
                 <%#= link_to 'Détail wine', wine_path(@wine), class: 'btn btn-primary' %>
               </div>
             </div>
-            </div>
           </div>
+        </div>
       <% end %>
     <% end %>
   </div>

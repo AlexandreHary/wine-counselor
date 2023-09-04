@@ -67,3 +67,15 @@
   width: 50%;
   font-size: 14px;
 }
+
+.btn-pref {
+  width: 18% !important;
+  font-size: 18px !important;
+  margin: auto;
+}
+
+.btn-pref:hover {
+  background-color: $white;
+  color: $red;
+  font-family: 'Lobster';
+}
