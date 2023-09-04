@@ -10,8 +10,9 @@ body {
   margin-left: 50px;
   margin-right: 50px;
 }
+
 .body {
-  background-image: url('bcimg.png');
+  background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.7)), url('bcimg.png');
   background-size: cover;
 }
 
@@ -28,4 +29,5 @@ body {
 
 h1 {
   color: white;
+  text-transform: uppercase;
 }
