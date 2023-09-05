@@ -64,6 +64,18 @@
 }
 
 .btn-modal {
-  width: 50%;
-  font-size: 14px;
+  width: 100% !important;
+  font-size: 14px !important;
+}
+
+.btn-pref {
+  width: 18% !important;
+  font-size: 18px !important;
+  margin: auto;
+}
+
+.btn-pref:hover {
+  background-color: $white;
+  color: $red;
+  font-family: 'Lobster';
 }
