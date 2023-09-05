@@ -16,5 +16,6 @@ Rails.application.routes.draw do
 
   namespace :caviste do
     resources :offers, only: %i[index show create new edit update destroy]
+    resources :wines, only: %i[index show create new edit update destroy]
   end
 end

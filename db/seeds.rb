@@ -9,7 +9,6 @@ Question.destroy_all
 Chatroom.destroy_all
 User.destroy_all
 
-
 puts 'Loading the seeds'
 
 # require File.expand_path('../seeds/chatroom', __FILE__) # the ../ just removes `seeds.rb` filename from the path which is given by __FILE__
