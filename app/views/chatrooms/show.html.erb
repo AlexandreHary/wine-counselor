@@ -1,10 +1,10 @@
 <!-- Ouverture porte - trouver mon vin -->
 <div class="door <%= "hide" if @hide%>" data-controller="display-none" data-display-none-target="div">
-  <div class='door-left <%= "hide" if @hide%>' data-display-none-target="div">
+  <div class='door-left <%= "hide" if @hide%>' data-display-none-target="div doorLeft">
     <div class="door-container" >
     </div>
   </div>
-  <div class='door-right <%= "hide" if @hide%>' data-display-none-target="div">
+  <div class='door-right <%= "hide" if @hide%>' data-display-none-target="div doorRight">
     <div class="door-container" >
     </div>
   </div>
@@ -15,15 +15,28 @@
 <div class="chatroom_container">
   <div id="chatroom">
     <div id="messages">
+      <!-- Hello message -->
+      <div class="chat-container mt-5">
+        <img src="https://res.cloudinary.com/dpjincxmo/image/upload/v1693566676/wineCounselor_drhifh.png" class="avatar_question" alt="winecounselor">
+        <div class="bubble_question mb-3">
+          <div class="arrow"></div>
+          <p class='text-black'> Bonjour <%= current_user.first_name %>,<br>
+          <br>Bienvenue dans l'univers du vin français guidé par la technologie - je suis votre e-conseiller en vins. Expert dans le domaine, je suis là pour vous aider à choisir le vin parfait.
+          <br>Des vins de Bordeaux aux charmes de la Bourgogne, je possède une connaissance approfondie sur les vins français.<br>
+          <br>Que vous soyez novice ou connaisseur, je vous guiderai vers des choix adaptés à vos goûts. Des accords mets-vins aux caractéristiques des régions, posez-moi vos questions et découvrez l'art du vin avec moi. 🍷
+          </p>
+        </div>
+      </div>
       <!-- Loop through previous answers -->
       <% @previous_answers.each do |answer| %>
       <div class="chat-container">
         <img src="https://res.cloudinary.com/dpjincxmo/image/upload/v1693566676/wineCounselor_drhifh.png" class="avatar_question" alt="winecounselor">
-        <div class="bubble_question">
+        <div class="bubble_question mb-3">
           <div class="arrow"></div>
           <p class='text-black'><%= answer.associated_question.title %></p>
         </div>
-        <div class="bubble_answer">
+          <%= image_tag "wine.png",  aria_expanded: "false", class: "avatar_answer"%>
+        <div class="bubble_answer mb-3">
           <p class='text-black'><%= answer.option.full_sentence %></p>
         </div>
       </div>
@@ -32,7 +45,7 @@
       <!-- Current question -->
       <div class="chat-container">
         <img src="https://res.cloudinary.com/dpjincxmo/image/upload/v1693566676/wineCounselor_drhifh.png" class="avatar_question" alt="winecounselor">
-        <div class="bubble_question">
+        <div class="bubble_question mb-3">
           <p class='text-black'><%= @current_question.title %></p>
         </div>
       </div>
@@ -45,10 +58,9 @@
                       wrapper_html: { class: 'd-flex justify-content-center gap-3'},
                       item_wrapper_class: 'chatroom-label',
                       collection: @current_question.options.map {|option| [option.full_sentence, option.id] } %>
-          <%= f.submit "Valider mon choix", class: "btn-valid d-block mx-auto" %>
+          <%= f.submit "Valider mon choix", class: "btn-valid d-block mx-auto mb-3" %>
       <% end %>
 
     </div> <!-- Close the "messages" div -->
   </div> <!-- Close the "chatroom" div -->
 </div> <!-- Close the "chatroom_container" div -->
-</body>

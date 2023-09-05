@@ -1,6 +1,7 @@
 class WinesController < ApplicationController
   def index
     @chatroom = Chatroom.find(params[:chatroom_id])
+    @bookings = @chatroom.bookings
     @tags = @chatroom.tags
     @wines = Wine.all
   end
