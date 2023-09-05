@@ -1,15 +1,18 @@
 <h1 class='card-title text-center'>Nouveau vin</h1>
 <%= simple_form_for [:caviste, @wine] do |f| %>
-  <%= f.input :rating %>
   <%= f.input :name,
               required: true,
               label: "Nom",
               hint: " 15 caractères maximum",
               input_html: { maxlength: 15, size: 40} %>
-  <%= f.input :description %>
-  <%= f.input :year %>
   <%= f.input :appellation %>
-   <%= f.input :photo, as: :file %>
+  <%= f.input :year,
+              label: "Année",
+              as: :string,
+              input_html: { data: { controller: "datepicker" } } %>
+  <%= f.input :description %>
+  <%= f.input :rating, label: "Notes" %>
+  <%= f.input :photo, as: :file %>
 
   <div class="card-body d-flex flex-column align-items-center gap-3">
     <%= f.submit "Ajouter", class: "btn btn-primary" %>
