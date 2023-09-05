@@ -13,7 +13,6 @@ class Caviste::WinesController < ApplicationController
 
   def create
     @wine = Wine.new(wine_params)
-    @wine.user = current_user
     if @wine.save
       puts "Vin enregistré !" # Debug output
       redirect_to caviste_wines_path, notice: "Publié avec succès !"
@@ -52,6 +51,6 @@ class Caviste::WinesController < ApplicationController
   end
 
   def wine_params
-    params.require(:wine).permit(:rating, :name, :description, :year, :appellation, :photo)
+    params.require(:wine).permit(:rating, :name, :description, :year, :appellation, :wine_photo)
   end
 end
