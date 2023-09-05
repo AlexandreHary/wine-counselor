@@ -1,54 +1,63 @@
 <div class="offer-pref">
-  <div class="custom-row">
-    <div class="col-md-3 line d-flex flex-column gap-3">
-      <% @bookings.each do |booking| %>
-      <div class="card-selected position-relative">
-        <% if booking.wine.wine_photo.present? %>
-            <div class="card-img-selected pt-2"><%= cl_image_tag booking.wine.wine_photo.key, width: 150, height: 150 %></div>
-        <% else %>
-            <div class="card-img-selected pt-2" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= image_path "wine.png" %>'); max-height: 150px; max-width: 260px;"></div>
-        <% end %>
-        <div class="title-card-selected card-title"><%= booking.wine.name %>
-          <div class="title-underline"></div>
-        </div>
-        <div class="position"><%= booking.wine.appellation %> <%= booking.wine.year %></div>
-        <div class="rating-note d-flex">Note :
-          <div class="rating-stars">
-            <% (1..5).each do |i| %>
-              <% if i <= booking.wine.rating %>
-                <span class="star-filled"> &#9733;</span>
-              <% else %>
-                <span class="star-empty"> &#9733;</span>
+  <% @bookings.each do |booking| %>
+    <div class="custom-row">
+      <div class="col-md-3 line d-flex flex-column gap-3">
+        <div class="card-selected position-relative">
+          <% if booking.wine.wine_photo.present? %>
+              <div class="card-img-selected pt-2"><%= cl_image_tag booking.wine.wine_photo.key, width: 150, height: 150 %></div>
+          <% else %>
+              <div class="card-img-selected pt-2" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= image_path "wine.png" %>'); max-height: 150px; max-width: 260px;"></div>
+          <% end %>
+          <div class="title-card-selected card-title"><%= booking.wine.name %>
+            <div class="title-underline"></div>
+          </div>
+          <div class="position"><%= booking.wine.appellation %> <%= booking.wine.year %></div>
+          <div class="rating-note d-flex">Note :
+            <div class="rating-stars">
+              <% (1..5).each do |i| %>
+                <% if i <= booking.wine.rating %>
+                  <span class="star-filled"> &#9733;</span>
+                <% else %>
+                  <span class="star-empty"> &#9733;</span>
+                <% end %>
               <% end %>
-            <% end %>
+            </div>
           </div>
         </div>
       </div>
-      <% end %>
-    </div>
-    <div class="col-md-9">
-      <div class="vertical-line"></div>
-        <% @bookings.each do |booking| %>
+      <div class="col-md-9">
+        <div class="vertical-line"></div>
           <% booking.wine.offers.each do |offer| %>
             <div class="col-md-4">
               <div class="card-offer">
                 <% if offer.offer_photo.present? %>
                   <div class="offer-card-img pt-2">
-                    <%= cl_image_tag offer.offer_photo.key, width: 150, height: 150 %>
+                    <%= cl_image_tag offer.offer_photo.key, width: 285, height: 100 %>
                   </div>
                 <% else %>
                   <div class="offer-card-img pt-2" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= image_path "wine.png" %>'); max-height: 150px; max-width: 260px;"></div>
                 <% end %>
-                <div class="url-card-offered card-title">
-                  <%= offer.url %>
-                  <div class="title-underline"></div>
+                <div class="card-btn-title">
+                  <a href="<%= offer.url %>" class="btn">Cliquez ici</a>
                 </div>
-                <div class="position"><%= offer.delivery %> <%= offer.price %> <%= offer.quantity %></div>
-                <div class="offer-content"><%#= offer.content %></div>
+                <div class="row foricon">
+                  <div class="col-md-6">
+                    <div class="icon">
+                      <%= image_tag("livraison.png") %><%= (offer.delivery - Date.today).to_i %> jours
+                    </div>
+                    <div class="icon">
+                      <%= image_tag("etiqueter.png") %> <%= offer.price %> euros
+                    </div>
+                  </div>
+                  <div class="col-md-6 middle">
+                    <div class="icon">
+                      <%= image_tag("vin.png") %> Stock: <%= offer.quantity %>
+                    </div>
+                </div>
               </div>
             </div>
           <% end %>
-        <% end %>
+      </div>
     </div>
-  </div>
+  <% end %>
 </div>
