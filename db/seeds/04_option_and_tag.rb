@@ -63,15 +63,6 @@ option_tag_5 = OptionTag.create!(tag: tag_15, option: option_3_q5 )
 
 puts 'creating answers'
 
-# # Créez un tableau pour stocker les réponses
-# answers = []
-
-# # Créez les réponses et liez-les aux options correspondantes
-# Answer.create!(chatroom: Chatroom.first, option: option_1_q1 )
-# Answer.create!(chatroom: Chatroom.first, option: option_1_q2 )
-# Answer.create!(chatroom: Chatroom.first, option: option_1_q3 )
-# Answer.create!(chatroom: Chatroom.first, option: option_1_q4 )
-# Answer.create!(chatroom: Chatroom.first, option: option_1_q5 )
 Answer.create!(chatroom: Chatroom.first, option: option_1_q1 )
 Answer.create!(chatroom: Chatroom.first, option: option_1_q2 )
 Answer.create!(chatroom: Chatroom.first, option: option_1_q3 )

@@ -1,4 +1,3 @@
-Offer.destroy_all
 Answer.destroy_all
 WineTag.destroy_all
 Offer.destroy_all
