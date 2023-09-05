@@ -1,6 +1,6 @@
 class Wine < ApplicationRecord
   has_many :bookings
-  has_many :offers
+  has_many :offers, dependent: :destroy
   has_many :wine_tags
 
   has_one_attached :wine_photo

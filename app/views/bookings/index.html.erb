@@ -1,12 +1,43 @@
-
-<div class="card-selection" style="width: 18rem;">
-  <img src="https://m3.vinsetmillesimes.com/91691-large_default/petrus-1960-magnum.jpg" class="card-img-top reduced" style="border-radius: 15px;">
-  <div class="card-body">
-    <h5 class="card-title" style="background-color: white; color: red; text-align: center; padding: 10px;"><%= @wine.name %></h5>
+<div class="offer-pref">
+  <div class="custom-row">
+    <div class="col-md-3 line d-flex flex-column gap-3">
+      <% @bookings.each do |booking| %>
+      <div class="card-selected position-relative">
+        <% if booking.wine.wine_photo.present? %>
+            <div class="card-img-selected pt-2"><%= cl_image_tag booking.wine.wine_photo.key, width: 150, height: 150 %></div>
+        <% else %>
+            <div class="card-img-selected pt-2" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= image_path "wine.png" %>'); max-height: 150px; max-width: 260px;"></div>
+        <% end %>
+        <div class="title-card-selected card-title"><%= booking.wine.name %>
+          <div class="title-underline"></div>
+        </div>
+        <div class="position"><%= booking.wine.appellation %> <%= booking.wine.year %></div>
+      </div>
+      <% end %>
+    </div>
+    <div class="col-md-9">
+      <div class="vertical-line"></div>
+        <% @bookings.each do |booking| %>
+          <% booking.wine.offers.each do |offer| %>
+            <div class="col-md-4">
+              <div class="card-offer">
+                <% if offer.offer_photo.present? %>
+                  <div class="offer-card-img pt-2">
+                    <%= cl_image_tag offer.offer_photo.key, width: 150, height: 150 %>
+                  </div>
+                <% else %>
+                  <div class="offer-card-img pt-2" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= image_path "wine.png" %>'); max-height: 150px; max-width: 260px;"></div>
+                <% end %>
+                <div class="url-card-offered card-title">
+                  <%= offer.wine.name %>
+                  <div class="title-underline"></div>
+                </div>
+                <div class="position"><%= offer.wine.appellation %> <%= offer.wine.year %></div>
+                <div class="offer-content"><%#= offer.content %></div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+    </div>
   </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">Année: <%= @wine.year %></li>
-    <li class="list-group-item">Appellation: <%= @wine.appellation %></li>
-    <li class="list-group-item">Note: <%= @wine.rating %>/5</li>
-  </ul>
 </div>

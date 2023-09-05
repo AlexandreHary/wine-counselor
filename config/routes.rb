@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :chatrooms, only: %i[show create] do
     resources :wines, only: %i[index]
     resources :answers, only: %i[create]
-    resources :bookings, only: %i[index create increment]
+    resources :bookings, only: %i[index create]
   end
 
   resources :wines, only: %i[] do

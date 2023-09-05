@@ -1,11 +1,13 @@
 Answer.destroy_all
 WineTag.destroy_all
+Offer.destroy_all
 Wine.destroy_all
 OptionTag.destroy_all
 Option.destroy_all
 Question.destroy_all
 Chatroom.destroy_all
 User.destroy_all
+
 
 require "open-uri"
 
@@ -133,3 +135,11 @@ file = URI.open("https://maison-wineted.com/cdn/shop/products/PETRUS_3cdf031a-5a
 wine_17 = Wine.create!(name: "Pétrus", appellation: "Bordeaux, Pomerol", year: "1995", description: "Il y a le nom. Il y a le paradis. Il a dieu et son associé. Ils font du vin. Naturellement se noue une complicité entre les hommes, pardon, les dieux, c’est bien normal ; le résultat est…à la hauteur. Vous l’aurez compris, on ne parle ici plus guère de vin tant le liquide est estimé, estimable, choyé, recherché, évocateur, enchanteur…" ,rating: 4.99)#rouge
 wine_17.wine_photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 wine_17.save
+
+puts "offer"
+
+
+file = URI.open("https://medias.oas.io/medias/2019/03/20/12/wineandco-o.png")
+offer_1 = Offer.create!(user_id: user_1.id, wine: wine_10, url: "https://www.wineandco.com/domaine-casanova-gris-rose-52091-fr-eur-fr.html", quantity: 6, price: 6, address: "67 Quai des Chartrons, 33300 Bordeaux", delivery: Date.today + 10.days)
+offer_1.offer_photo.attach(io: file, filename: "wineandco.png", content_type: "image/png")
+offer_1.save
