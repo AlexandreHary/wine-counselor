@@ -3,7 +3,8 @@
   display: flex;
   position: relative;
   align-items: flex-start;
-  margin: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 /* Styles for avatars */
@@ -12,11 +13,21 @@
   height: 50px;
   border-radius: 50%;
   margin-right: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.avatar_answer {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-left: 10px;
+  background-position: cover;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* Styles for question bubbles (including arrow) */
 .bubble_question {
-  width: calc(100% - 60px); /* Adjust the width to accommodate the avatar */
+  width: calc(100% - 250px); /* Adjust the width to accommodate the avatar */
   padding: 20px;
   background-color: #f9f7dd;
   border-radius: 10px;
@@ -41,13 +52,28 @@
 
 /* Styles for answer bubbles */
 .bubble_answer {
-  width: 100%;
+  width: calc(100% - 250px);
   padding: 20px;
   background-color: #f0f0f0;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   margin-top: 100px; /* Add margin to separate answers */
   position: relative; /* Ajoutez cette ligne */
+
+  /* Add the arrow styles here */
+  &::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #f0f0f0;
+    right: -7px;
+    top: 32%;
+    transform: translateY(12%);
+    z-index: 1;
+  }
 }
 
 

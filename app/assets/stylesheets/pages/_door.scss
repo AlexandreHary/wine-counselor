@@ -5,7 +5,7 @@
   position: absolute;
 }
 .door-left {
-  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/dpjincxmo/image/upload/v1693479841/Capture_d_e%CC%81cran_2023-08-31_a%CC%80_13.01.39_ickejt.png);
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/dpjincxmo/image/upload/v1693816783/door_dn0u67.png);
   background-size: 200% 100%;
   // background-position: center;
   position: absolute;
@@ -17,8 +17,9 @@
   z-index: 1;
 }
 
+
 .door-right {
-  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/dpjincxmo/image/upload/v1693479841/Capture_d_e%CC%81cran_2023-08-31_a%CC%80_13.01.39_ickejt.png);
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/dpjincxmo/image/upload/v1693816783/door_dn0u67.png);
   background-size: 200% 100%;
   background-position: -100%;
   position: absolute;
@@ -30,12 +31,20 @@
   z-index: 1;
 }
 
-.door-container {
-  text-align: center; /* Centrer le contenu horizontalement dans le container */
+.open-left {
+  transform-origin: left center;
+  transition: transform 3s ease-in;
+  transform: translateX(-110%);
 }
 
-.door:not(.door-expanded) {
-  min-width: calc(100vh - 80px); /* Utilisez VH pour définir la hauteur */
+.open-right {
+  transform-origin: right center;
+  transition: transform 3s ease-in;
+  transform: translateX(100%);
+}
+
+.door-container {
+  text-align: center;
 }
 
 .hide {
