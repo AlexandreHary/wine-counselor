@@ -49,7 +49,6 @@
           <p class='text-black'><%= @current_question.title %></p>
         </div>
       </div>
-
       <%= simple_form_for [@chatroom, @answer], html: { class: 'd-flex, w-100' } do |f| %>
           <%= f.input :option,
                       as: :radio_buttons,

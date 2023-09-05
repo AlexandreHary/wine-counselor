@@ -5,9 +5,10 @@ class ChatroomsController < ApplicationController
 
   def show
     @chatroom = Chatroom.find(params[:id])
-    @answer = Answer.new
     @previous_answers = @chatroom.answers
+    @answer = Answer.new
     @current_question = params[:next_question].present? ? Question.find(params[:next_question]) : Question.first
+    @options = @current_question.options
     if @current_question.position > 1
       @hide = true
     end
