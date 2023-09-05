@@ -1,22 +1,81 @@
-.column {
-  border-right: 1px solid #ccc; /* Adding a vertical separation line */
-  padding: 10px; /* Adding some padding for spacing */
+.offer-pref {
+  width: 100%;
+  padding: 10px;
 }
 
-.offers {
-  color: white;
-  background-color: black;
-  border-radius: 10px ;
+.custom-row {
+  display: flex;
+  min-height: 100%;
+  min-width: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 15px;
+  padding: 20px;
 }
 
-.card-selection {
-  border-radius: 55px;
-  margin-top: 20px;
+.card-selected {
   background-color: white;
+  padding: 10px;
+  color: black;
+  border-radius: 15px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.reduced{
-  height: 150px;
-  width: 100px;
+.title-card-selected {
+  color: $red;
+  text-align: center;
+  padding: 10px;
 }
 
+.title-underline {
+  width: 80%;
+  height: 0.2px;
+  background-color: red;
+  margin: 0 auto;
+  margin-top: 5px;
+}
+
+.card-img-selected {
+  text-align: center;
+  border: 0.01px solid #c9c7c7;
+  border-radius: 15px;
+  padding: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.position {
+  text-align: center;
+}
+
+.rating-stars {
+  display: inline-block;
+  font-size: 18px;
+  color: gold;
+}
+
+.star-filled {
+  color: gold;
+}
+
+.star-empty {
+  color: gray;
+}
+
+.line {
+  border-right: 1px solid #000;
+  height: 80%;
+}
+
+.card-offer {
+  margin-left: 20px;
+  background-color: white;
+  padding: 10px;
+  color: black;
+  border-radius: 15px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.url-card-offered {
+  color: $red;
+  text-align: center;
+  padding: 10px;
+}

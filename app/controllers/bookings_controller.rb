@@ -1,7 +1,9 @@
 class BookingsController < ApplicationController
   def index
-    @bookings = Booking.all
-    @wine=Wine.last #transformer.last en params etc
+    @chatroom = Chatroom.find(params[:chatroom_id])
+    @bookings = Booking.where(chatroom: @chatroom)
+    # @offers = Offer.where(wine: booking.wine)
+    # @offers.each do |offer|
   end
 
   def create
