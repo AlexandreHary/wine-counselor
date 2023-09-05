@@ -2,6 +2,7 @@ class Wine < ApplicationRecord
   has_many :bookings, dependent: :destroy
   has_many :offers, dependent: :destroy
   has_many :wine_tags, dependent: :destroy
+  has_many :tags, through: :wine_tags
 
   has_one_attached :wine_photo
 
@@ -12,3 +13,12 @@ class Wine < ApplicationRecord
   validates :appellation, presence: true
   #  validates :wine_photo, presence: true
 end
+
+# require 'combinatorics'
+
+# tags = [1, 2, 3, 4, 5]
+# combinations = tags.combination(3).to_a
+
+# combinations.each do |combination|
+#   puts combination.inspect
+# end
