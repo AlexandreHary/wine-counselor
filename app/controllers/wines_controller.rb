@@ -3,7 +3,7 @@ class WinesController < ApplicationController
     @chatroom = Chatroom.find(params[:chatroom_id])
     @bookings = @chatroom.bookings
     @tags = @chatroom.tags
-    @wines = Wine.all
+    @wines = @chatroom.matched_wines
   end
 
   # def new
