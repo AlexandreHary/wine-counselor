@@ -41,21 +41,56 @@ tag_15 = Tag.create!(category: Question.fifth.title, value: option_3_q5.small)
 puts 'creating option_tags'
 
 option_tag_1 = OptionTag.create!(tag: tag_1, option: option_1_q1 )
-option_tag_1 = OptionTag.create!(tag: tag_1, option: option_2_q1 )
-option_tag_1 = OptionTag.create!(tag: tag_1, option: option_3_q1 )
+option_tag_1 = OptionTag.create!(tag: tag_2, option: option_2_q1 )
+option_tag_1 = OptionTag.create!(tag: tag_3, option: option_3_q1 )
 
-option_tag_2 = OptionTag.create!(tag: tag_2, option: option_1_q2 )
-option_tag_2 = OptionTag.create!(tag: tag_2, option: option_2_q2 )
-option_tag_2 = OptionTag.create!(tag: tag_2, option: option_3_q2 )
+option_tag_2 = OptionTag.create!(tag: tag_4, option: option_1_q2 )
+option_tag_2 = OptionTag.create!(tag: tag_5, option: option_2_q2 )
+option_tag_2 = OptionTag.create!(tag: tag_6, option: option_3_q2 )
 
-option_tag_3 = OptionTag.create!(tag: tag_3, option: option_1_q3 )
-option_tag_3 = OptionTag.create!(tag: tag_3, option: option_2_q3 )
-option_tag_3 = OptionTag.create!(tag: tag_3, option: option_3_q3 )
+option_tag_3 = OptionTag.create!(tag: tag_7, option: option_1_q3 )
+option_tag_3 = OptionTag.create!(tag: tag_8, option: option_2_q3 )
+option_tag_3 = OptionTag.create!(tag: tag_9, option: option_3_q3 )
 
-option_tag_4 = OptionTag.create!(tag: tag_4, option: option_1_q4 )
-option_tag_4 = OptionTag.create!(tag: tag_4, option: option_2_q4 )
-option_tag_4 = OptionTag.create!(tag: tag_4, option: option_3_q4 )
+option_tag_4 = OptionTag.create!(tag: tag_10, option: option_1_q4 )
+option_tag_4 = OptionTag.create!(tag: tag_11, option: option_2_q4 )
+option_tag_4 = OptionTag.create!(tag: tag_12, option: option_3_q4 )
 
-option_tag_5 = OptionTag.create!(tag: tag_5, option: option_1_q5 )
-option_tag_5 = OptionTag.create!(tag: tag_5, option: option_2_q5 )
-option_tag_5 = OptionTag.create!(tag: tag_5, option: option_3_q5 )
+option_tag_5 = OptionTag.create!(tag: tag_13, option: option_1_q5 )
+option_tag_5 = OptionTag.create!(tag: tag_14, option: option_2_q5 )
+option_tag_5 = OptionTag.create!(tag: tag_15, option: option_3_q5 )
+
+
+puts 'creating answers'
+
+# # Créez un tableau pour stocker les réponses
+# answers = []
+
+# # Créez les réponses et liez-les aux options correspondantes
+# Answer.create!(chatroom: Chatroom.first, option: option_1_q1 )
+# Answer.create!(chatroom: Chatroom.first, option: option_1_q2 )
+# Answer.create!(chatroom: Chatroom.first, option: option_1_q3 )
+# Answer.create!(chatroom: Chatroom.first, option: option_1_q4 )
+# Answer.create!(chatroom: Chatroom.first, option: option_1_q5 )
+Answer.create!(chatroom: Chatroom.first, option: option_1_q1 )
+Answer.create!(chatroom: Chatroom.first, option: option_1_q2 )
+Answer.create!(chatroom: Chatroom.first, option: option_1_q3 )
+Answer.create!(chatroom: Chatroom.first, option: option_1_q4 )
+Answer.create!(chatroom: Chatroom.first, option: option_1_q5 )
+
+
+Answer.create!(chatroom: Chatroom.second, option: option_2_q1 )
+Answer.create!(chatroom: Chatroom.second, option: option_2_q2 )
+Answer.create!(chatroom: Chatroom.second, option: option_2_q3 )
+Answer.create!(chatroom: Chatroom.second, option: option_2_q4 )
+Answer.create!(chatroom: Chatroom.second, option: option_2_q5 )
+
+Answer.create!(chatroom: Chatroom.third, option: option_3_q1 )
+Answer.create!(chatroom: Chatroom.third, option: option_3_q2 )
+Answer.create!(chatroom: Chatroom.third, option: option_3_q3 )
+Answer.create!(chatroom: Chatroom.third, option: option_3_q4 )
+Answer.create!(chatroom: Chatroom.third, option: option_3_q5 )
+
+puts 'Answers created successfully'
+
+# # 3 tags lié à 1 vin

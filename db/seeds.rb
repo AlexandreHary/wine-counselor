@@ -3,6 +3,7 @@ Answer.destroy_all
 WineTag.destroy_all
 Offer.destroy_all
 Wine.destroy_all
+Tag.destroy_all
 OptionTag.destroy_all
 Option.destroy_all
 Question.destroy_all

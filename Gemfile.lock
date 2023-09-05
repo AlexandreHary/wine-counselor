@@ -100,6 +100,7 @@ GEM
     cloudinary (1.27.0)
       aws_cf_signer
       rest-client (>= 2.0.0)
+    combinatorics (0.4.4)
     concurrent-ruby (1.2.2)
     crass (1.0.6)
     date (3.3.3)
@@ -288,6 +289,7 @@ DEPENDENCIES
   bootstrap (~> 5.2)
   capybara
   cloudinary
+  combinatorics (~> 0.4.4)
   debug
   devise
   dotenv-rails

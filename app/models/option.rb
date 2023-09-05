@@ -1,7 +1,8 @@
 class Option < ApplicationRecord
-  belongs_to :question
-  has_many :answers
-  has_many :option_tags
+  belongs_to :question, dependent: :destroy
+  has_many :answers, dependent: :destroy
+  has_many :option_tags, dependent: :destroy
+  has_many :tags, through: :option_tags
 
   validates :verbose, presence: true
   validates :small, presence: true
