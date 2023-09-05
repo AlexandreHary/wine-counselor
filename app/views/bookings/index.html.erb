@@ -12,6 +12,17 @@
           <div class="title-underline"></div>
         </div>
         <div class="position"><%= booking.wine.appellation %> <%= booking.wine.year %></div>
+        <div class="rating-note d-flex">Note :
+          <div class="rating-stars">
+            <% (1..5).each do |i| %>
+              <% if i <= booking.wine.rating %>
+                <span class="star-filled"> &#9733;</span>
+              <% else %>
+                <span class="star-empty"> &#9733;</span>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
       </div>
       <% end %>
     </div>
@@ -29,10 +40,10 @@
                   <div class="offer-card-img pt-2" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= image_path "wine.png" %>'); max-height: 150px; max-width: 260px;"></div>
                 <% end %>
                 <div class="url-card-offered card-title">
-                  <%= offer.wine.name %>
+                  <%= offer.url %>
                   <div class="title-underline"></div>
                 </div>
-                <div class="position"><%= offer.wine.appellation %> <%= offer.wine.year %></div>
+                <div class="position"><%= offer.delivery %> <%= offer.price %> <%= offer.quantity %></div>
                 <div class="offer-content"><%#= offer.content %></div>
               </div>
             </div>

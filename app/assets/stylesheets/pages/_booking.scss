@@ -47,9 +47,12 @@
 }
 
 .rating-stars {
+  text-align: center;
   display: inline-block;
   font-size: 18px;
   color: gold;
+  padding-left: 2px;
+  padding-top: -2px;
 }
 
 .star-filled {
@@ -63,15 +66,27 @@
 .line {
   border-right: 1px solid #000;
   height: 80%;
+  padding : 20px;
+}
+
+.rating-note {
+  margin: auto;
+  padding-left: 75px;
+
 }
 
 .card-offer {
+  margin-top: 20px;
   margin-left: 20px;
   background-color: white;
   padding: 10px;
   color: black;
   border-radius: 15px;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.offer-card-img {
+
 }
 
 .url-card-offered {
