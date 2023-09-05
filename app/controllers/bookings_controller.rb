@@ -7,16 +7,16 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(booking_params)
-    @booking.user = current_user
+    @wine = Wine.find(params[:wine])
+    @chatroom = Chatroom.find(params[:chatroom_id])
+    @booking = Booking.new(wine: @wine, chatroom: @chatroom)
+    if @booking.save
+      redirect_to chatroom_wines_path, notice: "Selectionné avec succès !"
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def destroy
-  end
-
-  private
-
-  def booking_params
-    params.require(:booking).permit(:chatroom_id, :wine_id)
   end
 end
