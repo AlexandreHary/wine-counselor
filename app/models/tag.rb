@@ -4,5 +4,4 @@ class Tag < ApplicationRecord
 
   validates :category, presence: true
   validates :value, presence: true
-
 end

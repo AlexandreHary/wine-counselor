@@ -3,6 +3,7 @@
 @import "door";
 @import "chatroom";
 @import "booking";
+@import "form_offer";
 
 body {
   font-family: $body-font;
@@ -31,4 +32,8 @@ body {
 h1 {
   color: white;
   text-transform: uppercase;
+}
+
+.white-text {
+  color: white !important;
 }
