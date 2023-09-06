@@ -14,7 +14,7 @@
 <!-- Début chatroom -->
 <div class="chatroom_container">
   <div id="chatroom">
-    <div id="messages">
+    <div id="messages" data-controller="chatroom">
       <!-- Hello message -->
       <div class="chat-container mt-5">
         <img src="https://res.cloudinary.com/dpjincxmo/image/upload/v1693566676/wineCounselor_drhifh.png" class="avatar_question" alt="winecounselor">
@@ -29,7 +29,7 @@
       </div>
       <!-- Loop through previous answers -->
       <% @previous_answers.each do |answer| %>
-      <div class="chat-container">
+      <div class="chat-container" data-chatroom-target='message'>
         <img src="https://res.cloudinary.com/dpjincxmo/image/upload/v1693566676/wineCounselor_drhifh.png" class="avatar_question" alt="winecounselor">
         <div class="bubble_question mb-3">
           <div class="arrow"></div>
@@ -49,6 +49,7 @@
           <p class='text-black'><%= @current_question.title %></p>
         </div>
       </div>
+      <div data-chatroom-target="end"></div>
       <%= simple_form_for [@chatroom, @answer], html: { class: 'd-flex, w-100' } do |f| %>
           <%= f.input :option,
                       as: :radio_buttons,
@@ -59,7 +60,6 @@
                       collection: @current_question.options.map {|option| [option.full_sentence, option.id] } %>
           <%= f.submit "Valider mon choix", class: "btn btn-valid d-block mx-auto mb-3" %>
       <% end %>
-
     </div> <!-- Close the "messages" div -->
   </div> <!-- Close the "chatroom" div -->
 </div> <!-- Close the "chatroom_container" div -->
