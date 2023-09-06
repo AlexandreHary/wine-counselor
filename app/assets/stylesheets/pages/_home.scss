@@ -1,1 +1,11 @@
 // Specific CSS for your home-page
+
+.home-page {
+  background-color: $white !important;
+  background-size: cover;
+  width: 100%;
+  padding-bottom: 30px;
+  padding-top: 50px;
+  min-height: calc(100vh - 80px);
+  min-width: 100vw;
+}

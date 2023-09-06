@@ -1,14 +1,15 @@
 .btn {
+  background-color: $red;
+  color: $white;
   border-radius: 10px;
   width: 100%;
-  text-transform: uppercase;
-  font-family: 'Lobster';
+  font-family: 'Lobster' !important;
+  text-transform: uppercase !important;
 }
 
 .btn:hover{
   background-color: $white;
   color: $red;
-  text-transform: uppercase;
 }
 
 .btn-show {
@@ -17,50 +18,38 @@
 
 .btn-wine {
   width: 100%;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .btn-door {
   width: 30%;
   font-size: 28px;
   background-color: #dca6a623;
-  color: $white;
-  font-family: 'Lobster';
-  // margin-top: 400px;
-  // margin-left: 492px;
-  text-transform: uppercase;
   border: 5px;
   box-shadow: 5px;
   position: absolute;
-  top: 50%; /* Placez le bouton à 50% du haut de son conteneur parent */
-  left: 50%; /* Placez le bouton à 50% de la gauche de son conteneur parent */
-  transform: translate(-50%, -50%); /* Utilisez transform pour le centrer parfaitement */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 1;
 }
 
 .btn-door:hover{
   background-color: $white;
   color: $red;
-  text-transform: uppercase;
-  font-family: 'Lobster';
 }
 
 .btn-valid {
   height: 55px;
   width: 18%;
-  background-color: $red;
-  color: $white;
-  font-family: 'Lobster';
   border:  black;
-  border-radius: 5px;
+  border-radius: 10px;
   font-size: 18px;
 }
 
 .btn-valid:hover {
   background-color: $white;
   color: $red;
-  font-family: 'Lobster';
-  border-radius: 5px;
 }
 
 .btn-modal {
@@ -77,5 +66,10 @@
 .btn-pref:hover {
   background-color: $white;
   color: $red;
-  font-family: 'Lobster';
+}
+
+.url-card-offered-btn {
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
 }

@@ -3,8 +3,6 @@
 @import "door";
 @import "chatroom";
 @import "booking";
-@import "form_offer";
-@import "form_wine";
 
 body {
   font-family: $body-font;
@@ -17,17 +15,6 @@ body {
 .body {
   background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.7)), url('bcimg.png');
   background-size: cover;
-}
-
-.home-page {
-  background-color: #ffffff !important; /* Utilisez la couleur que vous voulez */
-  background-size: cover;
-  width: 100%;
-  padding-bottom: 30px;
-  padding-top: 50px;
-  min-height: calc(100vh - 80px);
-  min-width: 100vw;
-  // margin-bottom: 100px;
 }
 
 h1 {

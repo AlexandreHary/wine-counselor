@@ -9,6 +9,7 @@
 
 /* Styles for avatars */
 .avatar_question {
+  margin-right: 10px;
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -17,22 +18,23 @@
 }
 
 .avatar_answer {
+  margin-left: 10px;
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  margin-left: 10px;
   background-position: cover;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* Styles for question bubbles (including arrow) */
 .bubble_question {
-  width: calc(100% - 250px); /* Adjust the width to accommodate the avatar */
+  width: calc(100% - 250px);
+  margin-left: 30px;
   padding: 20px;
   background-color: #f9f7dd;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  position: relative; /* Ajoutez cette ligne */
+  position: relative;
 
   /* Add the arrow styles here */
   &::before {
@@ -53,12 +55,13 @@
 /* Styles for answer bubbles */
 .bubble_answer {
   width: calc(100% - 250px);
+  margin-right: 30px;
   padding: 20px;
   background-color: #f0f0f0;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  margin-top: 100px; /* Add margin to separate answers */
-  position: relative; /* Ajoutez cette ligne */
+  margin-top: 100px;
+  position: relative;
 
   /* Add the arrow styles here */
   &::before {
@@ -76,14 +79,13 @@
   }
 }
 
-
 .chatroom-label {
 
   &:hover {
     background-color: $white;
     color: $red;
     font-family: 'Lobster';
-    border-radius: 5px;
+    border-radius: 10px;
   }
 
   label {
@@ -91,7 +93,7 @@
     color: white;
     background-color: $red;
     font-family: 'Lobster';
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
   }
 }
