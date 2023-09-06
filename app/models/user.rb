@@ -11,4 +11,7 @@ class User < ApplicationRecord
 
   validates :first_name, presence: true
   validates :last_name, presence: true
+
+  enum role: { visitor: 0, caviste: 1 }
+
 end
