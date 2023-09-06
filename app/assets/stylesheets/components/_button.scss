@@ -5,20 +5,17 @@
   width: 100%;
   font-family: 'Lobster' !important;
   text-transform: uppercase !important;
+  font-size: 14px;
 }
 
 .btn:hover{
+  border: 1px solid $red;
   background-color: $white;
   color: $red;
 }
 
 .btn-show {
   width: 40%;
-}
-
-.btn-wine {
-  width: 100%;
-  font-size: 14px;
 }
 
 .btn-door {
@@ -34,11 +31,6 @@
   z-index: 1;
 }
 
-.btn-door:hover{
-  background-color: $white;
-  color: $red;
-}
-
 .btn-valid {
   height: 55px;
   width: 18%;
@@ -47,10 +39,6 @@
   font-size: 18px;
 }
 
-.btn-valid:hover {
-  background-color: $white;
-  color: $red;
-}
 
 .btn-modal {
   width: 100% !important;
@@ -58,15 +46,11 @@
 }
 
 .btn-pref {
-  width: 18% !important;
+  width: 50% !important;
   font-size: 18px !important;
   margin: auto;
 }
 
-.btn-pref:hover {
-  background-color: $white;
-  color: $red;
-}
 
 .url-card-offered-btn {
   text-align: center;

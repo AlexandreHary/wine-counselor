@@ -1,10 +1,12 @@
 class Caviste::WinesController < ApplicationController
+  before_action :set_wine, only: %i[show edit update destroy]
+
   def index
     @wines = Wine.all
   end
 
   def show
-    set_wine
+    # set_wine
   end
 
   def new
@@ -22,7 +24,7 @@ class Caviste::WinesController < ApplicationController
   end
 
   def edit
-    set_wine
+   # set_wine
   end
 
   def update
