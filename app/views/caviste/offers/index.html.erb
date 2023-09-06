@@ -5,32 +5,45 @@
         <div class="col-lg-4 col-md-6 pb-3 ">
           <div class="position-relative">
             <div class="card-offer d-flex flex-column align-items-center gap-3 mx-auto mb-4 ">
-              <% if offer.offer_photo.present? %>
+              <% if offer.wine.wine_photo.present? %>
                 <div class="offer-card-img pt-2">
-                  <%= cl_image_tag offer.offer_photo.key, width: 285, height: 100 %>
+                  <%= cl_image_tag offer.wine.wine_photo.key, width: 285, height: 180 %>
                 </div>
               <% else %>
                 <div class="offer-card-img pt-2" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= image_path "offer.png" %>'); max-height: 150px; max-width: 260px;">
                 </div>
               <% end %>
+                <h4 class="card-title"> <%= truncate(offer.wine.name, length: 25, omission: '...') %></h4>
+                <div class="lign">
+                </div>
+              <div class="card-text pt-2 pb-2">
+                <p class="card-text"><U>Description :</U> <%= truncate(offer.wine.description.capitalize, length: 70, separator: ' ', omission: '...') %></p>
+                <p class="card-text"><U>Appellation :</U> <%= offer.wine.appellation %></p>
+              </div>
+              <div class="lign">
+              </div>
               <div class="row foricon">
                 <div class="col-md-6">
                   <div class="icon">
-                    <%= image_tag("livraison.png") %><%= (offer.delivery - Date.today).to_i %> jours
+                    <%= image_tag("livraison.png") %>
+                    Livraison : <%= (offer.delivery - Date.today).to_i %> jours
                   </div>
                   <div class="icon">
-                    <%= image_tag("etiqueter.png") %> <%= offer.price %> €
+                    <%= image_tag("etiqueter.png") %>
+                    Prix : <%= offer.price %> €
                   </div>
                 </div>
                 <div class="col-md-6 middle">
                   <div class="icon">
-                    <%= image_tag("vin.png") %> Stock : <%= offer.quantity %>
+                    <%= image_tag("vin.png") %>
+                    Stock : <%= offer.quantity %> bouteilles
                   </div>
                 </div>
               </div>
-            <a href="<%= offer.url %>" class="btn btn-wine">Accéder à mon site</a>
-            <%= link_to 'Détail du vin', caviste_offer_path(offer), class: 'btn btn-wine' %>
+              <a href="<%= offer.url %>" class="btn">Accéder à mon site</a>
+              <%= link_to 'Détail du vin', caviste_offer_path(offer), class: 'btn' %>
             </div>
+          </div>
         </div>
       <% end %>
     </div>
