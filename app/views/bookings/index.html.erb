@@ -25,17 +25,17 @@
           </div>
         </div>
       </div>
-      <div class="col-md-9">
+      <div class="col-md-9 d-flex gap-1">
         <div class="vertical-line"></div>
           <% booking.wine.offers.each do |offer| %>
             <div class="col-md-4">
-              <div class="card-offer">
+              <div class="card-offer-booking">
                 <% if offer.offer_photo.present? %>
-                  <div class="offer-card-img pt-2">
-                    <%= cl_image_tag offer.offer_photo.key, width: 285, height: 100 %>
+                  <div class="offer-booking-img pt-2">
+                    <%= cl_image_tag offer.offer_photo.key, width: 200, height: 100 %>
                   </div>
                 <% else %>
-                  <div class="offer-card-img pt-2" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= image_path "wine.png" %>'); max-height: 150px; max-width: 260px;"></div>
+                  <div class="offer-card-img pt-2" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= image_path "wine.png" %>'); max-height: 150px; max-width: 200px;"></div>
                 <% end %>
                 <div class="btn ">
                   <a href="<%= offer.url %>" class="btn">Cliquez ici</a>
