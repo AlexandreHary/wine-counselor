@@ -21,3 +21,4 @@ load(Rails.root.join('db', 'seeds', "04_option_and_tag.rb"))
 load(Rails.root.join('db', 'seeds', "06_wine_and_winetag.rb"))
 load(Rails.root.join('db', 'seeds', "09_offer.rb"))
 puts 'finished'
+
