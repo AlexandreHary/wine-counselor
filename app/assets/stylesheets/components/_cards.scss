@@ -46,7 +46,23 @@
   box-shadow: 4px 4px 10px rgba(161, 0, 0, 0.5);
 }
 
+.card-offer-booking {
+  background-color: white;
+  padding: 10px;
+  width: 250px;
+  color: black;
+  border-radius: 10px;
+  box-shadow: 4px 4px 10px rgba(161, 0, 0, 0.5);
+}
+
 .offer-card-img {
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px rgba(161, 0, 0, 0.5);
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.offer-booking-img {
   border-radius: 10px;
   box-shadow: 5px 5px 10px rgba(161, 0, 0, 0.5);
   width: 100%;
