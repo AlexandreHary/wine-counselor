@@ -6,8 +6,8 @@ class User < ApplicationRecord
 
   has_one_attached :profile_picture
 
-  has_many :chatrooms
-  has_many :offers
+  has_many :chatrooms, dependent: :destroy
+  has_many :offers, dependent: :destroy
 
   validates :first_name, presence: true
   validates :last_name, presence: true

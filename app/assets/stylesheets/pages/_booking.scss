@@ -8,7 +8,7 @@
   min-height: 100%;
   min-width: 100%;
   background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 15px;
+  border-radius: 10px;
   padding: 20px;
   margin-top: 10px;
 }
@@ -17,7 +17,7 @@
   background-color: white;
   padding: 10px;
   color: black;
-  border-radius: 15px;
+  border-radius: 10px;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
   height: 301px;
 }
@@ -39,7 +39,7 @@
 .card-img-selected {
   text-align: center;
   border: 0.01px solid #c9c7c7;
-  border-radius: 15px;
+  border-radius: 10px;
   padding: 5px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
@@ -77,24 +77,6 @@
 
 }
 
-.card-offer {
-  margin-top: 20px;
-  margin-left: 20px;
-  background-color: white;
-  padding: 10px;
-  color: black;
-  border-radius: 15px;
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-
-.url-card-offered-btn {
-  color: white;
-  text-align: center;
-  padding: 10px;
-  border-radius: 15px;
-  background-color: $red;
-}
 
 .icon {
   background-color: white;
@@ -111,24 +93,7 @@
   }
 }
 
-.foricon{
-
-}
-
-.offer-card-img {
-  border-radius: 15px;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-  width: 100%;
-  margin-bottom: 5px;
-}
 
 .middle {
   margin-top: 35px;
-}
-
-.card-btn-title {
-  background-color: $red;
-  border-radius: 15px;
-  margin-top: 15px;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
 }

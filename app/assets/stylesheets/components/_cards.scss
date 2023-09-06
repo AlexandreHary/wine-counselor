@@ -1,12 +1,11 @@
 .card {
-  border: 1px solid #000439;
-  border-radius: 15px !important;
+  border-radius: 10px !important;
 }
 
 /* ATTENTION .card-wine est pour l'index de wine */
 .card-wine {
   border: 1px solid #000439;
-  border-radius: 15px !important;
+  border-radius: 10px !important;
   box-shadow: 5px 10px 20px rgba(161, 0, 0, 0.7);
   height: 400px;
   padding-bottom: 25px;
@@ -19,7 +18,7 @@
   min-height: 430px;
   min-width: 100%;
   background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 15px;
+  border-radius: 10px;
 }
 
 .card-body {
@@ -30,14 +29,29 @@
 
 /* Style pour les images de fond des cartes */
 .card-bg-image img {
-  border-radius: 7px;
+  border-radius: 10px;
   height: 150px;
   width: 200px;
   object-fit: cover;
   border: 1px solid rgba(161, 0, 0, 0.5);
-  border-radius: 15px !important;
+  border-radius: 10px !important;
 }
 
+.card-offer {
+  background-color: white;
+  padding: 10px;
+  width: 300px;
+  color: black;
+  border-radius: 10px;
+  box-shadow: 4px 4px 10px rgba(161, 0, 0, 0.5);
+}
+
+.offer-card-img {
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px rgba(161, 0, 0, 0.5);
+  width: 100%;
+  margin-bottom: 5px;
+}
 
 .card-title {
   color: $red;
@@ -48,5 +62,5 @@
 .lign {
   border-bottom: 1px solid $red;
   width: 150px;
-  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 1px 20px rgba(161, 0, 0, 0.5);
 }
