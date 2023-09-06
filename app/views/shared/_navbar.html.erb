@@ -9,10 +9,17 @@
 
     <div class="collapse navbar-collapse dropdown" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
-        <% if user_signed_in? %>
-          <li class="nav-item">
-            <%= link_to "Nouvelle recherche", chatrooms_path, data: { turbo_method: :post }, class: "nav-link" %>
-          </li>
+        <% if user_signed_in?  %>
+            <% if current_user.caviste? %>
+              <li class="nav-item">
+                <%= link_to "Nouvelle offre",  new_caviste_offer_path, class: "nav-link" %>
+              </li>
+            <% end %>
+            <% if current_user.visitor? %>
+              <li class="nav-item">
+                <%= link_to "Nouvelle recherche", chatrooms_path, class: "nav-link" %>
+              </li>
+            <% end %>
           <li class="nav-item profile-picture">
             <!-- J'ai enlever dropdown-toggle à la li du dessus-->
             <%# if current_user.profile_picture.present? %>

@@ -35,9 +35,9 @@
           <div class="arrow"></div>
           <p class='text-black'><%= answer.associated_question.title %></p>
         </div>
-          <%= image_tag "wine.png",  aria_expanded: "false", class: "avatar_answer"%>
         <div class="bubble_answer mb-3">
-          <p class='text-black'><%= answer.option.full_sentence %></p>
+          <%= image_tag "wine.png",  aria_expanded: "false", class: "avatar_answer"%>
+          <p class='text-white'><%= answer.option.full_sentence %></p>
         </div>
       </div>
       <% end %>
@@ -58,7 +58,7 @@
                       wrapper_html: { class: 'd-flex justify-content-center gap-3'},
                       item_wrapper_class: 'chatroom-label',
                       collection: @current_question.options.map {|option| [option.full_sentence, option.id] } %>
-          <%= f.submit "Valider mon choix", class: "btn-valid d-block mx-auto mb-3" %>
+          <%= f.submit "Valider mon choix", class: "btn btn-valid d-block mx-auto mb-3" %>
       <% end %>
     </div> <!-- Close the "messages" div -->
   </div> <!-- Close the "chatroom" div -->

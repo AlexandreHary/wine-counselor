@@ -11,7 +11,6 @@ User.destroy_all
 
 puts 'Loading the seeds'
 
-# require File.expand_path('../seeds/chatroom', __FILE__) # the ../ just removes `seeds.rb` filename from the path which is given by __FILE__
 
 # load the correct seeds file for our Rails environment
 load(Rails.root.join('db', 'seeds', "01_user.rb"))
@@ -21,3 +20,4 @@ load(Rails.root.join('db', 'seeds', "04_option_and_tag.rb"))
 load(Rails.root.join('db', 'seeds', "06_wine_and_winetag.rb"))
 load(Rails.root.join('db', 'seeds', "09_offer.rb"))
 puts 'finished'
+

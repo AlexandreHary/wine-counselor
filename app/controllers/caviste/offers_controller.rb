@@ -1,10 +1,12 @@
 class Caviste::OffersController < ApplicationController
+  before_action :set_offer, only: %i[show edit update destroy]
+
   def index
     @offers = Offer.all
   end
 
   def show
-    set_offer
+    # set_offer
   end
 
   def new
@@ -23,7 +25,7 @@ class Caviste::OffersController < ApplicationController
   end
 
   def edit
-    set_offer
+    # set_offer
   end
 
   def update

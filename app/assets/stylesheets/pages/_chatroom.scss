@@ -3,36 +3,19 @@
   display: flex;
   position: relative;
   align-items: flex-start;
-  margin-left: 50px;
-  margin-right: 50px;
-}
-
-/* Styles for avatars */
-.avatar_question {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin-right: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.avatar_answer {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin-left: 10px;
-  background-position: cover;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin-left: 70px;
+  margin-right: 100px;
 }
 
 /* Styles for question bubbles (including arrow) */
 .bubble_question {
-  width: calc(100% - 250px); /* Adjust the width to accommodate the avatar */
+  width: calc(100% - 250px);
+  margin-left: 50px;
   padding: 20px;
-  background-color: #f9f7dd;
+  background-color: $white ;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  position: relative; /* Ajoutez cette ligne */
+  position: relative;
 
   /* Add the arrow styles here */
   &::before {
@@ -42,48 +25,48 @@
     height: 0;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
-    border-top: 10px solid #f9f7dd;
+    border-top: 10px solid $white;
     left: -7px;
     top: 32%;
     transform: translateY(12%);
-    z-index: 1;
   }
 }
 
 /* Styles for answer bubbles */
 .bubble_answer {
   width: calc(100% - 250px);
+  margin-right: 50px;
   padding: 20px;
-  background-color: #f0f0f0;
+  background-color: $red;
+  color: $white;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  margin-top: 100px; /* Add margin to separate answers */
-  position: relative; /* Ajoutez cette ligne */
+  right: -40px;
+  margin-top: 100px;
+  position: relative;
 
   /* Add the arrow styles here */
   &::before {
     content: "";
+    color: $white;
     position: absolute;
     width: 0;
     height: 0;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
-    border-top: 10px solid #f0f0f0;
+    border-top: 10px solid $red;
     right: -7px;
     top: 32%;
     transform: translateY(12%);
-    z-index: 1;
   }
 }
 
-
 .chatroom-label {
-
   &:hover {
     background-color: $white;
     color: $red;
     font-family: 'Lobster';
-    border-radius: 5px;
+    border-radius: 10px;
   }
 
   label {
@@ -91,7 +74,7 @@
     color: white;
     background-color: $red;
     font-family: 'Lobster';
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
   }
 }
