@@ -22,7 +22,7 @@ wine_4 = Wine.create!(name: "Domaine du Bienheureux", appellation: "Chateauneuf-
 wine_4.wine_photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 wine_4.save
 
-file = URI.open("https://vinformateur.com/wp-content/uploads/2023/04/Mule-Noire-Crozes-Hermitage-Paul-Jaboulet-Aine-2020.jpg")
+file = URI.open("https://static3.wineandco.com/themes/wineandco/images/produits/5/0/3/3/grd50339.jpg")
 wine_5 = Wine.create!(name: "Paul Jaboulet Ainé, les Jalets ", appellation: "Rhône Crozes-Hermitage", year: "2021", description: "Un superbe vin blanc, soyeux en bouche et proposant une jolie finale, a consommer autour des 16°C, particulièrement apprécié avec un poisson" ,rating: 3.7)#blanc
 wine_5.wine_photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 wine_5.save
@@ -47,7 +47,7 @@ wine_9 = Wine.create!(name: "Château du Seuil", appellation: "Provence , Côtes
 wine_9.wine_photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 wine_9.save
 
-file = URI.open("https://static3.wineandco.com/themes/wineandco/images/produits/2/0/2/2/grd20225.jpg")
+file = URI.open("https://static2.wineandco.com/themes/wineandco/images/produits/5/2/0/9/grd52091.jpg")
 wine_10 = Wine.create!(name: "Domaine Casanova", appellation: "Corse", year: "2021", description: "Un vin rosé de Corse fruité et agréable en bouche, à boire bien frais bien sûr. On l'apprécie à l'apéro mais aussi tout le long du repas." ,rating: 3.9)#rosé
 wine_10.wine_photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 wine_10.save
@@ -78,7 +78,7 @@ wine_15.wine_photo.attach(io: file, filename: "nes.png", content_type: "image/pn
 wine_15.save
 
 file = URI.open("https://densidsteflaske.dk/cdn/shop/products/l-ostal-cazes-grand-vin-minervois-la-liviniere-2016-l-ostal-cazes-rodvin-21248146440353.jpg?v=1612529152")
-wine_16 = Wine.create!(name: "Domaine de L'Ostal Grand Vin 2018", appellation: "Languedoc-Roussillon , Minervois La Livinière", year: "2018", description: "Coup de Coeur 2* du Guide Hachette des vins 2023 !" ,rating: 3.8)#rouge
+wine_16 = Wine.create!(name: "Domaine de L'Ostal", appellation: "Languedoc-Roussillon , Minervois La Livinière", year: "2018", description: "Coup de Coeur 2* du Guide Hachette des vins 2023 !" ,rating: 3.8)#rouge
 wine_16.wine_photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 wine_16.save
 
@@ -153,7 +153,7 @@ wine_30.wine_photo.attach(io: file, filename: "nes.png", content_type: "image/pn
 wine_30.save
 
 file = URI.open("https://www.vinatis.com/id-59485-les-terrasses-rose-2022-chateau-pesquie")
-wine_31 = Wine.create!(name: "Chateau Pesquie, Les terrasses Roses", appellation: "Rhône", year: "", description: "Le Château Pesquié fait figure de porte-drapeaux dans la région du Mont Ventoux. Les cuvées y sont toujours d'une grande délicatesse et vinifiées d'une main de maître. " ,rating: 4.0)#rosé
+wine_31 = Wine.create!(name: "Chateau Pesquie, Les terrasses Roses", appellation: "Rhône", year: "2022", description: "Le Château Pesquié fait figure de porte-drapeaux dans la région du Mont Ventoux. Les cuvées y sont toujours d'une grande délicatesse et vinifiées d'une main de maître. " ,rating: 4.0)#rosé
 wine_31.wine_photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 wine_31.save
 
