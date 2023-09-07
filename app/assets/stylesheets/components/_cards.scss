@@ -23,7 +23,7 @@
 
 .card-body {
   height: 100%;
-  font-size: 12px;
+  font-size: 20px;
   padding-bottom: 25px
 }
 
@@ -72,7 +72,7 @@
 .card-title {
   color: $red;
   font-family: 'Lobster';
-  font-size: 20px;
+  font-size: 24px;
 }
 
 .card-title-home {
@@ -85,6 +85,12 @@
   border-bottom: 1px solid $red;
   width: 150px;
   box-shadow: 1px 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.lign-center {
+  border-bottom: 3px solid $red;
+  position: center;
+  width: 350px;
 }
 
 .card-text {
