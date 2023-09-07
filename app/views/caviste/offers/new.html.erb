@@ -1,4 +1,13 @@
-<div class="container white-text back-form">
-  <%= render 'form_offer' %>
+<div class="row contain-offer">
+  <div class="col-md-5 image-form-container">
+    <% if params["wine_id"].nil? %>
+      <%= image_tag "logo.png" %>
+    <% else %>
+      <%= cl_image_tag Wine.find(params["wine_id"]).wine_photo.key, width: 550, height: 550, :crop=>"fill" %>
+    <% end %>
+  </div>
+
+  <div class="col-md-7 form-container">
+    <%= render 'form_offer' %>
+  </div>
 </div>
-    
