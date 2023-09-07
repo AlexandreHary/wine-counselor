@@ -2,6 +2,8 @@ puts 'creatings offers'
 
 #Chateau peyrabon
 file = URI.open("https://medias.oas.io/medias/2019/03/20/12/wineandco-o.png")
+
+offer_1_1 = Offer.create!(user_id: User.first.id, wine: Wine.find_by(name: 'Chateaux Peyrabon'))
 offer_1_1 = Offer.create!(user_id: User.first.id, wine: Wine.offset(1).first, url: "https://www.wineandco.com/chateau-peyrabon-2016-17490-fr-eur-fr.html?gclid=Cj0KCQjwxuCnBhDLARIsAB-cq1rzgL1PQRNQZ-5mK2je5ptDZ2nES-BGCjM46IVUhIU_ugfr0i57RDsaAlJIEALw_wcB",
 quantity: 48, price: 12.90, address: "67 Quai des Chartrons, 33300 Bordeaux", delivery: Date.today + 10.days)
 offer_1_1.offer_photo.attach(io: file, filename: "wineandco.png", content_type: "image/png")
