@@ -1,10 +1,9 @@
-.profile-picture {
+.profile_picture {
   img {
     width: 40px;
     height: 40px;
     border-radius: 50%;
     border: white 2px solid;
-    overflow: hidden;
     object-fit: cover;
   }
 }
