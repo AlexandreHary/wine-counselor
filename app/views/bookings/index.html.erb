@@ -4,9 +4,9 @@
       <div class="col-md-3 line d-flex flex-column gap-3">
         <div class="card-selected position-relative">
           <% if booking.wine.wine_photo.present? %>
-              <div class="card-img-selected pt-2"><%= cl_image_tag booking.wine.wine_photo.key, width: 150, height: 150 %></div>
+            <div class="card-img-selected pt-2"><%= cl_image_tag booking.wine.wine_photo.key, width: 150, height: 150 %></div>
           <% else %>
-              <div class="card-img-selected pt-2" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= image_path "wine.png" %>'); max-height: 150px; max-width: 260px;"></div>
+            <div class="card-img-selected pt-2" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= image_path "wine.png" %>'); max-height: 150px; max-width: 260px;"></div>
           <% end %>
           <div class="title-card-selected card-title"><%= booking.wine.name %>
             <div class="title-underline"></div>
@@ -48,13 +48,12 @@
                     <div class="icon">
                       <%= image_tag("etiqueter.png") %> <%= offer.price %> euros
                     </div>
-
                   </div>
                   <div class="col-md-6 middle">
                     <div class="icon">
                       <%= image_tag("vin.png") %> Stock: <%= offer.quantity %>
                     </div>
-                    </div>
+                  </div>
                 </div>
               </div>
             </div>

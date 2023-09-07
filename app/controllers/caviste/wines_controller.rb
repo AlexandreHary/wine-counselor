@@ -25,7 +25,7 @@ class Caviste::WinesController < ApplicationController
   end
 
   def edit
-   # set_wine
+    # set_wine
   end
 
   def update

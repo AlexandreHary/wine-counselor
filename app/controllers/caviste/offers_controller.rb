@@ -2,7 +2,7 @@ class Caviste::OffersController < ApplicationController
   before_action :set_offer, only: %i[show edit update destroy]
 
   def index
-    @offers = Offer.all
+    @offers = current_user.offers
   end
 
   def show
@@ -15,7 +15,6 @@ class Caviste::OffersController < ApplicationController
   end
 
   def create
-
     # if @offer.save
     #   selected_wine = Wine.find(@offer.wine_id)
     #   @offer.update(wine_image_path: selected_wine.image_path) # Déplacez ceci ici
@@ -32,8 +31,6 @@ class Caviste::OffersController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
-
-
   end
 
   def edit

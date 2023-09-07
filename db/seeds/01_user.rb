@@ -15,9 +15,23 @@ user_3 = User.create!(first_name: "Enola", last_name: "LUKASIEWICZ", email: "eno
 user_3.profile_picture.attach(io: file, filename: "EnolaLUKASIEWICZ.png", content_type: "Enola LUKASIEWICZ")
 user_3.save
 
+file = URI.open("https://fr.web.img6.acsta.net/pictures/16/05/20/15/38/373052.jpg")
 user_4 = User.create!(first_name: "Victoria", last_name: "PARA", email: "vica@winecounselor.com", password: "azerty", role: 1)
+user_4.profile_picture.attach(io: file, filename: "VictoriaLPARA.png", content_type: "Victoria PARA")
+user_4.save
+
+file = URI.open("https://www.parismatch.com/lmnr/var/pm/public/media/image/Emma-Watson_0.jpg?VersionId=RC8sSswLrmMQFNdbRU7FRE3E80WtYdls")
 user_5 = User.create!(first_name: "Emma", last_name: "MAMA", email: "emma@winecounselor.com", password: "azerty", role: 1)
+user_4.profile_picture.attach(io: file, filename: "EmmaPARA.png", content_type: "Emma MAMA")
+user_5.save
+
 user_6 = User.create!(first_name: "Pablo", last_name: "PAB", email: "pablo@winecounselor.com", password: "azerty", role: 1)
+user_6.save
 user_7 = User.create!(first_name: "Armi", last_name: "PIAMONTE", email: "armi@winecounselor.com", password: "azerty", role: 1)
+user_7.save
+
 user_8 = User.create!(first_name: "Barbara", last_name: "PAB", email: "barbara@winecounselor.com", password: "azerty", role: 1)
+user_8.save
+
 user_9 = User.create!(first_name: "Laura", last_name: "LOLO", email: "laura@winecounselor.com", password: "azerty", role: 1)
+user_9.save
