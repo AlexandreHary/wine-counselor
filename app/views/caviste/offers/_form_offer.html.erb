@@ -1,4 +1,4 @@
-<h1 class='card-title text-center'>Nouvelle offre</h1>
+<h1 class='card-title-home text-center'>Nouvelle offre</h1>
 <%= simple_form_for [:caviste, @offer] do |f| %>
   <div class="form-group">
     <%= f.input :wine_id, collection: @wines, selected: params["wine_id"], class: 'form-control', input_html: { data: { controller: "wine-selection", action: "change->wine-selection#reloadPage" } }%>

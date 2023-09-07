@@ -10,21 +10,21 @@
         <h2 class="card-title-home text-center"> <%= @offer.wine.name%></h2>
         <div class="lign-center">
         </div>
-        <div class="col-md-6">
-          <div class="icon">
+        <div class="p-3">
+          <div class="icon pb-2">
             <%= image_tag("livraison.png") %>
-            Livraison : <%= (@offer.delivery - Date.today).to_i %> jours
+            <%= (@offer.delivery - Date.today).to_i %> jours
           </div>
-          <div class="icon">
+          <div class="icon pb-4">
             <%= image_tag("etiqueter.png") %>
-            Prix : <%= @offer.price %> €
+            <%= @offer.price %> €
           </div>
-        </div>
-        <div class="icon">
+        <div class="icon pb-2">
           <%= image_tag("vin.png") %>
-          Quantité : <%= @offer.quantity %> bouteilles
+          <%= @offer.quantity %> vins
         </div>
-        <p><strong> Accès à l'offre du vin :</strong> <a href="<%= @offer.url %>">Accéder à mon site</a></p>
+        <p class='pt-2 align-items-center'><a href="<%= @offer.url %>">Accéder à mon offre pour le vin </a></p>
+        </div>
       <div class="text-center">
         <%= link_to "Modifier", edit_caviste_offer_path, class: 'btn btn-primary btn-show col-md-6' %>
         <%= link_to "Supprimer", caviste_offer_path(@offer), class: 'btn btn-primary btn-show col-md-6',  data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de vouloir supprimer cette offre ?" } %>
