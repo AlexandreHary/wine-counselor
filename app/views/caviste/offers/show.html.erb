@@ -1,23 +1,32 @@
-<div class="container py-3">
+
+<div class="container py-5">
   <div class="row">
-    <div class="col-lg-4 col-md-6">
-      <div class="card card-show border rounded position-relative">
-        <div class="card-body d-flex flex-column gap-3">
-          <% if @offer.wine.wine_photo.present? %>
-            <div class="card-display" style="background-image: url('<%= cl_image_path @offer.wine.wine_photo.key %>'); height: 150px; width: 200px; "></div>
-          <% else %>
-            <div class="card-display" style="background-image: url('<%= image_path "logo.png" %>'); height: 150px; width: 200px;"></div>
-          <% end %>
-            <p><strong> Quantité :</strong> <%=@offer.quantity%></p>
-            <p><strong> Prix :</strong><%=@offer.price%> €</p>
-            <p><strong> Adresse :</strong><%=@offer.address%></p>
-            <p><strong> Date de livraison :</strong> <%=@offer.delivery%></p>
-            <p><strong> Url :</strong> <%=@offer.url%></p>
-          <div class="text-center">
-            <%= link_to "Modifier", edit_caviste_offer_path, class: 'btn btn-primary btn-show col-md-6' %>
-            <%= link_to "Supprimer", caviste_offer_path(@offer), class: 'btn btn-primary btn-show col-md-6',  data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de vouloir supprimer cette offre ?" } %>
+    <div class="col">
+      <div class="card-display" style="background-image: url('<%= cl_image_path @offer.wine.wine_photo.key %>'); height: 430px; width: 500px; background-position: cover; "></div>
+    </div>
+    <div class="col">
+      <div class="card card-show card-body d-flex flex-column gap-1">
+        <h2 class="card-title-home text-center"> <%= @offer.wine.name%></h2>
+        <div class="lign-center">
+        </div>
+        <div class="col-md-6">
+          <div class="icon">
+            <%= image_tag("livraison.png") %>
+            Livraison : <%= (@offer.delivery - Date.today).to_i %> jours
+          </div>
+          <div class="icon">
+            <%= image_tag("etiqueter.png") %>
+            Prix : <%= @offer.price %> €
           </div>
         </div>
+        <div class="icon">
+          <%= image_tag("vin.png") %>
+          Quantité : <%= @offer.quantity %> bouteilles
+        </div>
+        <p><strong> Accès à l'offre du vin :</strong> <a href="<%= @offer.url %>">Accéder à mon site</a></p>
+      <div class="text-center">
+        <%= link_to "Modifier", edit_caviste_offer_path, class: 'btn btn-primary btn-show col-md-6' %>
+        <%= link_to "Supprimer", caviste_offer_path(@offer), class: 'btn btn-primary btn-show col-md-6',  data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de vouloir supprimer cette offre ?" } %>
       </div>
     </div>
   </div>

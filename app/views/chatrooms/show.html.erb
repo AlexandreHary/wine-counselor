@@ -1,65 +1,21 @@
 <!-- Ouverture porte - trouver mon vin -->
-<div class="door <%= "hide" if @hide%>" data-controller="display-none" data-display-none-target="div">
-  <div class='door-left <%= "hide" if @hide%>' data-display-none-target="div doorLeft">
-    <div class="door-container" >
+<% if @chatroom.answers.empty? %>
+  <div class="door <%= "hide" if @hide%>" data-controller="display-none" data-display-none-target="div">
+    <div class='door-left <%= "hide" if @hide%>' data-display-none-target="div doorLeft">
+      <div class="door-container" >
+      </div>
     </div>
-  </div>
-  <div class='door-right <%= "hide" if @hide%>' data-display-none-target="div doorRight">
-    <div class="door-container" >
+    <div class='door-right <%= "hide" if @hide%>' data-display-none-target="div doorRight">
+      <div class="door-container" >
+      </div>
     </div>
+    <a class='btn btn-door mx-auto <%= "hide" if @hide%>' data-display-none-target="div" data-action="click->display-none#disable" >Trouver mon vin</a>
   </div>
-  <a class='btn btn-door mx-auto <%= "hide" if @hide%>' data-display-none-target="div" data-action="click->display-none#disable" >Trouver mon vin</a>
-</div>
+<% end %>
 
 <!-- Début chatroom -->
-<div class="chatroom_container">
+<div class="chatroom_container mb-5">
   <div id="chatroom">
-    <div id="messages" data-controller="chatroom">
-      <!-- Hello message -->
-      <div class="chat-container mt-5">
-        <img src="https://res.cloudinary.com/dpjincxmo/image/upload/v1693566676/wineCounselor_drhifh.png" class="avatar_question" alt="winecounselor">
-        <div class="bubble_question mb-3">
-          <div class="arrow"></div>
-          <p class='text-black'> Bonjour <%= current_user.first_name %>,<br>
-          <br>Bienvenue dans l'univers du vin français guidé par la technologie - je suis votre e-conseiller en vins. Expert dans le domaine, je suis là pour vous aider à choisir le vin parfait.
-          <br>Des vins de Bordeaux aux charmes de la Bourgogne, je possède une connaissance approfondie sur les vins français.<br>
-          <br>Que vous soyez novice ou connaisseur, je vous guiderai vers des choix adaptés à vos goûts. Des accords mets-vins aux caractéristiques des régions, posez-moi vos questions et découvrez l'art du vin avec moi. 🍷
-          </p>
-        </div>
-      </div>
-      <!-- Loop through previous answers -->
-      <% @previous_answers.each do |answer| %>
-      <div class="chat-container" data-chatroom-target='message'>
-        <img src="https://res.cloudinary.com/dpjincxmo/image/upload/v1693566676/wineCounselor_drhifh.png" class="avatar_question" alt="winecounselor">
-        <div class="bubble_question mb-3">
-          <div class="arrow"></div>
-          <p class='text-black'><%= answer.associated_question.title %></p>
-        </div>
-        <div class="bubble_answer mb-3">
-          <%= image_tag "wine.png",  aria_expanded: "false", class: "avatar_answer"%>
-          <p class='text-white'><%= answer.option.full_sentence %></p>
-        </div>
-      </div>
-      <% end %>
-
-      <!-- Current question -->
-      <div class="chat-container">
-        <img src="https://res.cloudinary.com/dpjincxmo/image/upload/v1693566676/wineCounselor_drhifh.png" class="avatar_question" alt="winecounselor">
-        <div class="bubble_question mb-3">
-          <p class='text-black'><%= @current_question.title %></p>
-        </div>
-      </div>
-      <div data-chatroom-target="end"></div>
-      <%= simple_form_for [@chatroom, @answer], html: { class: 'd-flex, w-100' } do |f| %>
-          <%= f.input :option,
-                      as: :radio_buttons,
-                      legend_tag: false,
-                      input_html: { class: 'chatroom-input sr-only'},
-                      wrapper_html: { class: 'd-flex justify-content-center gap-3'},
-                      item_wrapper_class: 'chatroom-label',
-                      collection: @current_question.options.map {|option| [option.full_sentence, option.id] } %>
-          <%= f.submit "Valider mon choix", class: "btn btn-valid d-block mx-auto mb-3" %>
-      <% end %>
-    </div> <!-- Close the "messages" div -->
+    <%= render 'messages', previous_answers: @previous_answers, current_question: @current_question, chatroom: @chatroom, answer: @answer %>
   </div> <!-- Close the "chatroom" div -->
 </div> <!-- Close the "chatroom_container" div -->

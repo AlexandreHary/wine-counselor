@@ -16,6 +16,7 @@ offer_1_2.save
 file = URI.open("https://upload.wikimedia.org/wikipedia/commons/7/72/Millesima_logo.jpg")
 offer_1_3 = Offer.create!(user_id: User.first.id, wine: Wine.offset(1).first, url: "https://www.millesima.fr/chateau-peyrabon-2016-e-cb-1.html?at_medium=sl&at_campaign=PMax-Top-Marques&at_platform=google&at_creation=&at_adtype=pla_with_promotion&at_term=1593%2F16%2FE%2FCB%2F1&gclid=CjwKCAjw6eWnBhAKEiwADpnw9slA2nBysjYFeeFjAJIvniixKiOND5q6HpJslSZsJ52Uhm3bW4ZDFxoCRCIQAvD_BwE",
 quantity: 120, price: 12.67, address: "67 Quai des Chartrons, 33300 Bordeaux", delivery: Date.today + 10.days)
+
 offer_1_3.offer_photo.attach(io: file, filename: "millesima.png", content_type: "image/png")
 offer_1_3.save
 
@@ -33,7 +34,7 @@ offer_2_2.offer_photo.attach(io: file, filename: "millesima.png", content_type: 
 offer_2_2.save
 
 file = URI.open("https://images.vivino.com/merchants/originals/p1dd13880000ma5.jpg")
-offer_2_3 = Offer.create!(user_id: User.first.id, wine: Wine.offset(2).first, url: "https://www.leverrecanaille.com/bordeaux/1185-les-fiefs-de-lagrange-2016-second-vin-saint-julien.html?gclid=Cj0KCQjwxuCnBhDLARIsAB-cq1oYV7NCFPpAYG3kLqg0-j2k6X4E-0DZY_ix5o8YB1Pc1SSYu9bxCv8aAttKEALw_wcB",
+offer_2_3 = Offer.create!(user_id: User.last.id, wine: Wine.offset(2).first, url: "https://www.leverrecanaille.com/bordeaux/1185-les-fiefs-de-lagrange-2016-second-vin-saint-julien.html?gclid=Cj0KCQjwxuCnBhDLARIsAB-cq1oYV7NCFPpAYG3kLqg0-j2k6X4E-0DZY_ix5o8YB1Pc1SSYu9bxCv8aAttKEALw_wcB",
 quantity: 3, price: 31.00, address: "67 Quai des Chartrons, 33300 Bordeaux", delivery: Date.today + 3.days)
 offer_2_3.offer_photo.attach(io: file, filename: "leverrecanaille.png", content_type: "image/png")
 offer_2_3.save
@@ -52,7 +53,7 @@ offer_3_2.offer_photo.attach(io: file, filename: "millesima.png", content_type: 
 offer_3_2.save
 
 file = URI.open("https://www.marcovasco.fr/blog/wp-content/uploads/2017/04/Logo-Twil.jpg")
-offer_3_3 = Offer.create!(user_id: User.first.id, wine: Wine.offset(3).first, url: "https://www.twil.fr/france/bordeaux/saint-emilion-grand-cru/chateau-la-dominique-wine-16779.html?utm_source=guidehachette&utm_medium=cpc&utm_campaign=fluxcatalogue&utm_term=id_produit_59814#328560",
+offer_3_3 = Offer.create!(user_id: User.last.id, wine: Wine.offset(3).first, url: "https://www.twil.fr/france/bordeaux/saint-emilion-grand-cru/chateau-la-dominique-wine-16779.html?utm_source=guidehachette&utm_medium=cpc&utm_campaign=fluxcatalogue&utm_term=id_produit_59814#328560",
 quantity: 3, price: 31.00, address: "67 Quai des Chartrons, 33300 Bordeaux", delivery: Date.today + 3.days)
 offer_3_3.offer_photo.attach(io: file, filename: "twil.png", content_type: "image/png")
 offer_3_3.save
@@ -65,13 +66,13 @@ offer_4_1.offer_photo.attach(io: file, filename: "wineandco.png", content_type: 
 offer_4_1.save
 
 file = URI.open("https://images2.vinadea.com/img/vinadea-logo-1647616257.jpg")
-offer_4_2 = Offer.create!(user_id: User.first.id, wine: Wine.offset(4).first, url: "https://www.vinadea.com/vins-aoc-chateauneuf-du-pape-rouge-blanc/26-domaine-du-bienheureux-2020-chateauneuf-du-pape-rouge-2020-75-cl.html",
+offer_4_2 = Offer.create!(user_id: User.fifth.id, wine: Wine.offset(4).first, url: "https://www.vinadea.com/vins-aoc-chateauneuf-du-pape-rouge-blanc/26-domaine-du-bienheureux-2020-chateauneuf-du-pape-rouge-2020-75-cl.html",
 quantity: 36, price: 35.00, address: "6 Av. du Pré de Challes, 74940 Annecy-le-Vieux", delivery: Date.today + 12.days)
 offer_4_2.offer_photo.attach(io: file, filename: "vinadea.png", content_type: "image/png")
 offer_4_2.save
 
 file = URI.open("https://italianwinesandfood.com/wp-content/uploads/2021/10/Vivino.jpg")
-offer_4_3 = Offer.create!(user_id: User.first.id, wine: Wine.offset(4).first, url: "https://www.vivino.com/FR/fr/domaine-du-bienheureux-chateauneuf-du-pape/w/6261955",
+offer_4_3 = Offer.create!(user_id: User.last.id, wine: Wine.offset(4).first, url: "https://www.vivino.com/FR/fr/domaine-du-bienheureux-chateauneuf-du-pape/w/6261955",
 quantity: 3, price: 31.00, address: "67 Quai des Chartrons, 33300 Bordeaux", delivery: Date.today + 3.days)
 offer_4_3.offer_photo.attach(io: file, filename: "vivino.png", content_type: "image/png")
 offer_4_3.save
@@ -84,7 +85,7 @@ offer_6_1.offer_photo.attach(io: file, filename: "wineandco.png", content_type: 
 offer_6_1.save
 
 file = URI.open("https://upload.wikimedia.org/wikipedia/commons/7/72/Millesima_logo.jpg")
-offer_5_2 = Offer.create!(user_id: User.first.id, wine: Wine.offset(5).first, url: "https://www.vindebacchus.com/1290-domaine-fouassier-les-grands-champs.html",
+offer_5_2 = Offer.create!(user_id: User.fifth.id, wine: Wine.offset(5).first, url: "https://www.vindebacchus.com/1290-domaine-fouassier-les-grands-champs.html",
 quantity: 60, price: 20.19, address: "6 Av. du Pré de Challes, 74940 Annecy-le-Vieux", delivery: Date.today + 12.days)
 offer_5_2.offer_photo.attach(io: file, filename: "vindebacchus.png", content_type: "image/png")
 offer_5_2.save
