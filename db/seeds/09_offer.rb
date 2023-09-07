@@ -115,24 +115,43 @@ quantity: 12, price: 20.70, address: "67 Quai des Chartrons, 33300 Bordeaux", de
 offer_6_3.offer_photo.attach(io: file, filename: "vindebacchus.png", content_type: "image/png")
 offer_6_3.save
 
-#Chateau guiraud
+#Chateau G guiraud
 file = URI.open("https://medias.oas.io/medias/2019/03/20/12/wineandco-o.png")
-offer_6_1 = Offer.create!(user_id: User.first.id, wine: Wine.offset(5).first, url: "https://www.wineandco.com/domaine-fouassier-sancerre-les-grands-champs-2021-52084-fr-eur-fr.html",
-quantity: 29, price: 22.90, address: "67 Quai des Chartrons, 33300 Bordeaux", delivery: Date.today + 10.days)
-offer_6_1.offer_photo.attach(io: file, filename: "wineandco.png", content_type: "image/png")
-offer_6_1.save
+offer_7_1 = Offer.create!(user_id: User.first.id, wine: Wine.offset(5).first, url: "https://www.wineandco.com/g-de-guiraud-2018-21324-fr-eur-fr.html",
+quantity: 48, price: 12.60, address: "67 Quai des Chartrons, 33300 Bordeaux", delivery: Date.today + 10.days)
+offer_7_1.offer_photo.attach(io: file, filename: "wineandco.png", content_type: "image/png")
+offer_7_1.save
 
-file = URI.open("https://vins-etonnants.com/cdn/shop/files/Image_e2b43d71-c18c-4201-b157-d591447f95df.png?height=628&pad_color=FFFFFF&v=1672827921&width=1200")
-offer_6_2 = Offer.create!(user_id: User.first.id, wine: Wine.offset(5).first, url: "https://vins-etonnants.com/products/sancerre-les-grands-champs-2021",
-quantity: 12, price: 22.90, address: "6 Av. du Pré de Challes, 74940 Annecy-le-Vieux", delivery: Date.today + 4.days)
-offer_6_2.offer_photo.attach(io: file, filename: "vinsetonnant.png", content_type: "image/png")
-offer_6_2.save
+file = URI.open("https://upload.wikimedia.org/wikipedia/commons/7/72/Millesima_logo.jpg")
+offer_7_2 = Offer.create!(user_id: User.first.id, wine: Wine.offset(5).first, url: "https://www.millesima.fr/le-g-de-chateau-guiraud-2018.html",
+quantity: 2, price: 14.50, address: "6 Av. du Pré de Challes, 74940 Annecy-le-Vieux", delivery: Date.today + 12.days)
+offer_7_2.offer_photo.attach(io: file, filename: "millesima.png", content_type: "image/png")
+offer_7_2.save
 
-file = URI.open("https://bacchusvin.fr/wp-content/uploads/2017/12/Bacchus-Vin-logo_1-300x123.png")
-offer_6_3 = Offer.create!(user_id: User.first.id, wine: Wine.offset(5).first, url: "https://www.vindebacchus.com/1290-domaine-fouassier-les-grands-champs.html",
-quantity: 12, price: 20.70, address: "67 Quai des Chartrons, 33300 Bordeaux", delivery: Date.today + 10.days)
-offer_6_3.offer_photo.attach(io: file, filename: "vindebacchus.png", content_type: "image/png")
-offer_6_3.save
+file = URI.open("https://images.vivino.com/merchants/originals/p1dd13880000ma5.jpg")
+offer_7_3 = Offer.create!(user_id: User.first.id, wine: Wine.offset(5).first, url: "https://www.vivino.com/FR/fr/chateau-guiraud-le-g-de-guiraud-bordeaux-blanc-sec/w/1173607?year=2018",
+quantity: 48, price: 12.60, address: "67 Quai des Chartrons, 33300 Bordeaux", delivery: Date.today + 5.days)
+offer_7_3.offer_photo.attach(io: file, filename: "vindebacchus.png", content_type: "image/png")
+offer_7_3.save
+
+#Minuty
+file = URI.open("https://medias.oas.io/medias/2019/03/20/12/wineandco-o.png")
+offer_7_1 = Offer.create!(user_id: User.first.id, wine: Wine.offset(5).first, url: "https://www.wineandco.com/g-de-guiraud-2018-21324-fr-eur-fr.html",
+quantity: 48, price: 12.60, address: "67 Quai des Chartrons, 33300 Bordeaux", delivery: Date.today + 10.days)
+offer_7_1.offer_photo.attach(io: file, filename: "wineandco.png", content_type: "image/png")
+offer_7_1.save
+
+file = URI.open("https://upload.wikimedia.org/wikipedia/commons/7/72/Millesima_logo.jpg")
+offer_7_2 = Offer.create!(user_id: User.first.id, wine: Wine.offset(5).first, url: "https://www.millesima.fr/le-g-de-chateau-guiraud-2018.html",
+quantity: 2, price: 14.50, address: "6 Av. du Pré de Challes, 74940 Annecy-le-Vieux", delivery: Date.today + 12.days)
+offer_7_2.offer_photo.attach(io: file, filename: "millesima.png", content_type: "image/png")
+offer_7_2.save
+
+file = URI.open("https://images.vivino.com/merchants/originals/p1dd13880000ma5.jpg")
+offer_7_3 = Offer.create!(user_id: User.first.id, wine: Wine.offset(5).first, url: "https://www.vivino.com/FR/fr/chateau-guiraud-le-g-de-guiraud-bordeaux-blanc-sec/w/1173607?year=2018",
+quantity: 48, price: 12.60, address: "67 Quai des Chartrons, 33300 Bordeaux", delivery: Date.today + 5.days)
+offer_7_3.offer_photo.attach(io: file, filename: "vindebacchus.png", content_type: "image/png")
+offer_7_3.save
 
 
 
