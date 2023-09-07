@@ -1,0 +1,50 @@
+    <div id="messages" data-controller="chatroom">
+      <!-- Hello message -->
+      <div class="chat-container mt-5">
+        <img src="https://res.cloudinary.com/dpjincxmo/image/upload/v1693566676/wineCounselor_drhifh.png" class="avatar_question" alt="winecounselor">
+        <div class="bubble_question mb-3">
+          <div class="arrow"></div>
+          <p class='text-black'> Bonjour <%= current_user.first_name %>,<br>
+            <br>Bienvenue dans l'univers du vin français guidé par la technologie - je suis votre e-conseiller en vins. Expert dans le domaine, je suis là pour vous aider à choisir le vin parfait.
+            <br>Des vins de Bordeaux aux charmes de la Bourgogne, je possède une connaissance approfondie sur les vins français.<br>
+            <br>Que vous soyez novice ou connaisseur, je vous guiderai vers des choix adaptés à vos goûts. Des accords mets-vins aux caractéristiques des régions, posez-moi vos questions et découvrez l'art du vin avec moi. 🍷
+          </p>
+        </div>
+      </div>
+      <!-- Loop through previous answers -->
+      <% previous_answers.each do |answer| %>
+        <div class="chat-container" data-chatroom-target='message'>
+          <img src="https://res.cloudinary.com/dpjincxmo/image/upload/v1693566676/wineCounselor_drhifh.png" class="avatar_question" alt="winecounselor">
+          <div class="bubble_question mb-3">
+            <div class="arrow"></div>
+            <p class='text-black'><%= answer.associated_question.title %></p>
+          </div>
+          <div class="bubble_answer mb-3">
+            <%= image_tag "wine.png",  aria_expanded: "false", class: "avatar_answer"%>
+            <p class='text-white'><%= answer.option.full_sentence %></p>
+          </div>
+        </div>
+      <% end %>
+
+      <!-- Current question -->
+      <div class="chat-container">
+        <img src="https://res.cloudinary.com/dpjincxmo/image/upload/v1693566676/wineCounselor_drhifh.png" class="avatar_question" alt="winecounselor">
+        <div class="bubble_question mb-3">
+          <p class='text-black'><%= current_question.title %></p>
+        </div>
+      </div>
+      <%= simple_form_for [chatroom, answer], html: { class: 'w-100', data: {chatroom_target: "form"} } do |f| %>
+        <%= f.input :option,
+                    as: :radio_buttons,
+                    legend_tag: false,
+                    input_html: { class: 'chatroom-input sr-only', data: {action: current_question.last? ? "" : "change->chatroom#submit"}},
+                    wrapper_html: { class: 'd-flex justify-content-center gap-3'},
+                    item_wrapper_class: 'chatroom-label',
+                    collection: current_question.options.map {|option| [option.full_sentence, option.id] } %>
+        <% if current_question.last? %>
+          <%= f.submit "Voir les offres", class: "btn btn-valid d-block mx-auto mb-3" %>
+        <% end %>
+      <div data-chatroom-target="end" class="mt-5 py-5"></div>
+
+      <% end %>
+    </div> <!-- Close the "messages" div -->
