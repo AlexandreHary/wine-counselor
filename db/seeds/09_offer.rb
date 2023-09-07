@@ -14,8 +14,9 @@ offer_1_2.offer_photo.attach(io: file, filename: "vinatis.png", content_type: "i
 offer_1_2.save
 
 file = URI.open("https://upload.wikimedia.org/wikipedia/commons/7/72/Millesima_logo.jpg")
-offer_1_3 = Offer.create!(user_id: User.last.id, wine: Wine.offset(1).first, url: "https://www.wineandco.com/domaine-casanova-gris-rose-52091-fr-eur-fr.html",
-quantity: 12, price: 12.50, address: "67 Quai des Chartrons, 33300 Bordeaux", delivery: Date.today + 10.days)
+offer_1_3 = Offer.create!(user_id: User.first.id, wine: Wine.offset(1).first, url: "https://www.millesima.fr/chateau-peyrabon-2016-e-cb-1.html?at_medium=sl&at_campaign=PMax-Top-Marques&at_platform=google&at_creation=&at_adtype=pla_with_promotion&at_term=1593%2F16%2FE%2FCB%2F1&gclid=CjwKCAjw6eWnBhAKEiwADpnw9slA2nBysjYFeeFjAJIvniixKiOND5q6HpJslSZsJ52Uhm3bW4ZDFxoCRCIQAvD_BwE",
+quantity: 120, price: 12.67, address: "67 Quai des Chartrons, 33300 Bordeaux", delivery: Date.today + 10.days)
+
 offer_1_3.offer_photo.attach(io: file, filename: "millesima.png", content_type: "image/png")
 offer_1_3.save
 

@@ -11,6 +11,7 @@ class Caviste::WinesController < ApplicationController
 
   def new
     @wine = Wine.new
+    @wines = Wine.all
   end
 
   def create

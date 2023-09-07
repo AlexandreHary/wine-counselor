@@ -11,9 +11,19 @@ class Caviste::OffersController < ApplicationController
 
   def new
     @offer = Offer.new
+    @wines = Wine.all
   end
 
   def create
+
+    # if @offer.save
+    #   selected_wine = Wine.find(@offer.wine_id)
+    #   @offer.update(wine_image_path: selected_wine.image_path) # Déplacez ceci ici
+    #   redirect_to caviste_offers_path, notice: "Offre créée avec succès !"
+    # else
+    #   render :new
+    # end
+
     @offer = Offer.new(offer_params)
     @offer.user = current_user
     if @offer.save
@@ -22,6 +32,8 @@ class Caviste::OffersController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+
+
   end
 
   def edit
@@ -29,6 +41,14 @@ class Caviste::OffersController < ApplicationController
   end
 
   def update
+    if @offer.update(offer_params)
+      selected_wine = Wine.find(@offer.wine_id)
+      @offer.update(wine_image_path: selected_wine.image_path)
+      redirect_to caviste_offers_path, notice: "L'offre a été mise à jour avec succès."
+    else
+      render :edit, status: :unprocessable_entity
+    end
+
     # set_offer
     if @offer.update(offer_params)
       redirect_to caviste_offers_path, notice: "L'offre a été mis à jour avec succès."
@@ -39,7 +59,6 @@ class Caviste::OffersController < ApplicationController
 
   def destroy
     # set_offer
-
     if @offer.destroy # Supprime l'offre de la base de données
       redirect_to caviste_offers_path, notice: "L'offre a été supprimé avec succès."
     else
