@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <%= javascript_importmap_tags %>
   </head>
+  
   <body class="container-fluid d-flex flex-column home-page <%= 'body' unless current_page?(root_path) || current_page?(new_caviste_offer_path) || controller.controller_name == "offers" && controller.action_name == "edit" %>">
     <%= render "shared/flashes" %>
     <%= render "shared/navbar" %>
