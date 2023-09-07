@@ -1,4 +1,4 @@
-<h1 class='card-title text-center'>Modifier une offre</h1>
+<h1 class='card-title text-center back-form'>Modifier une offre</h1>
 <%= simple_form_for [:caviste, @offer] do |f| %>
   <%= f.association :wine, label: "Vin" %>
   <%= f.input :photo, as: :file %>
