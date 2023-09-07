@@ -15,7 +15,6 @@ class Caviste::OffersController < ApplicationController
   end
 
   def create
-
     # if @offer.save
     #   selected_wine = Wine.find(@offer.wine_id)
     #   @offer.update(wine_image_path: selected_wine.image_path) # Déplacez ceci ici
@@ -32,8 +31,6 @@ class Caviste::OffersController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
-
-
   end
 
   def edit
