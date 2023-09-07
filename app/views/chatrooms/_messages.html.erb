@@ -42,7 +42,7 @@
                     item_wrapper_class: 'chatroom-label',
                     collection: current_question.options.map {|option| [option.full_sentence, option.id] } %>
         <% if current_question.last? %>
-          <%= f.submit "Voir les offres", class: "btn btn-valid d-block mx-auto mb-3" %>
+          <%= f.submit "Voir ma selection", class: "btn btn-valid d-block mx-auto mb-3" %>
         <% end %>
       <div data-chatroom-target="end" class="mt-5 py-5"></div>
 

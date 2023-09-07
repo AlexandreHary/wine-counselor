@@ -12,8 +12,7 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="container-fluid d-flex flex-column home-page <%= 'body' unless current_page?(root_path) || current_page?(new_caviste_offer_path) || current_page?(edit_caviste_offer_path) %>">
-    <%= render "shared/flashes" %>
+  <body class="container-fluid d-flex flex-column home-page <%= 'body' unless current_page?(root_path) || current_page?(new_caviste_offer_path) || controller.controller_name == "offers" && controller.action_name == "edit" %>">    <%= render "shared/flashes" %>
     <%= render "shared/navbar" %>
     <%= yield %>
     <%= render 'layouts/footer'%>

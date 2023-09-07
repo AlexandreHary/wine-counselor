@@ -1,16 +1,15 @@
 <h1 class='text-center pt-4 pb-3'>Notre selection de vins</h1>
 
 <%= render 'wine_card' %>
-<div class="row">
-  <div class="col-lg-6 col-md-12 pb-3 ">
-    <div class="text-white d-flex flex-column align-items-center">
-      <p class="text-white"><%= "#{@bookings.count} préférences ajoutées" %></p>
-      <% @bookings.each do |booking| %>
-        <p><%= booking.wine.name %></p>
-      <% end %>
-  </div>
-  <div class="col-lg-6 col-md-12 pb-3 ">
-      <%= link_to "VALIDER",  chatroom_bookings_path, class: "btn btn-primary btn-pref"%>
+
+<div class="validates">
+  <div class = "row" >
+    <div class="col-md-8 align-text">
+      <p><%= "#{@bookings.count} préférences ajoutées" %></p>
+    </div>
+    <div class="col-md-4 mx-auto">
+      <%= link_to "Voir les offres",  chatroom_bookings_path, class: "btn btn-primary btn-wine"%>
     </div>
   </div>
 </div>
+
