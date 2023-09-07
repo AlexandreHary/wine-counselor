@@ -12,7 +12,7 @@
 </div>
 
 <!-- Début chatroom -->
-<div class="chatroom_container">
+<div class="chatroom_container mb-5">
   <div id="chatroom">
     <div id="messages" data-controller="chatroom">
       <!-- Hello message -->
@@ -58,7 +58,7 @@
                       wrapper_html: { class: 'd-flex justify-content-center gap-3'},
                       item_wrapper_class: 'chatroom-label',
                       collection: @current_question.options.map {|option| [option.full_sentence, option.id] } %>
-          <%= f.submit "Valider mon choix", class: "btn btn-valid d-block mx-auto mb-3" %>
+          <%= f.submit "Valider mon choix", class: "btn btn-valid d-block mx-auto" %>
       <% end %>
     </div> <!-- Close the "messages" div -->
   </div> <!-- Close the "chatroom" div -->

@@ -9,22 +9,12 @@ legend ~ div.form-check:first-of-type {
   clear: left;
 }
 
-.back-form-wine {
-  min-height: 100%;
-  min-width: 100%;
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 10px;
-  padding: 20px;
-  margin-top: 10px;
-  font-family: $body-font;
-}
-
 .back-form {
   min-height: 100%;
   min-width: 100%;
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 10px;
-  padding: 20px;
-  margin-top: 10px;
+  margin-bottom: 50px;
+  margin-top: 30px;
   font-family: $body-font;
 }
