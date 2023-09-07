@@ -41,17 +41,12 @@ class Caviste::OffersController < ApplicationController
   end
 
   def update
+    # raise
+    @offer = Offer.find(params["id"])
     if @offer.update(offer_params)
-      selected_wine = Wine.find(@offer.wine_id)
-      @offer.update(wine_image_path: selected_wine.image_path)
+      # selected_wine = Wine.find(@offer.wine_id)
+      # @offer.update(wine_image_path: selected_wine.image_path)
       redirect_to caviste_offers_path, notice: "L'offre a été mise à jour avec succès."
-    else
-      render :edit, status: :unprocessable_entity
-    end
-
-    # set_offer
-    if @offer.update(offer_params)
-      redirect_to caviste_offers_path, notice: "L'offre a été mis à jour avec succès."
     else
       render :edit, status: :unprocessable_entity
     end

@@ -1,10 +1,8 @@
 <h1 class='card-title text-center back-form'>Modifier une offre</h1>
 <%= simple_form_for [:caviste, @offer] do |f| %>
   <%= f.association :wine, label: "Vin" %>
-  <%= f.input :photo, as: :file %>
   <%= f.input :price, label: "Prix" %>
   <%= f.input :quantity, label: "Quantité" %>
-  <%= f.input :address, label: "Adresse" %>
   <%= f.input :delivery,
               label: "Date de livraison",
               as: :string,

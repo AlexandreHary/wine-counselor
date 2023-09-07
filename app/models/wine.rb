@@ -11,6 +11,10 @@ class Wine < ApplicationRecord
   validates :description, presence: true
   validates :year, presence: true
   validates :appellation, presence: true
+
+  # selected_wine = Wine.find(@offer.wine_id)
+  # wine_image_path = selected_wine.image_path
+
   #  validates :wine_photo, presence: true
 end
 

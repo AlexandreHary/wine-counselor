@@ -1,5 +1,5 @@
 <div class="row contain-offer">
-  <div class="col-md-6 image-form-container">
+  <div class="col-md-5 image-form-container">
     <% if params["wine_id"].nil? %>
       <%= image_tag "logo.png" %>
     <% else %>
@@ -7,7 +7,7 @@
     <% end %>
   </div>
 
-  <div class="col-md-6 form-container">
+  <div class="col-md-7 form-container">
     <%= render 'form_offer' %>
   </div>
 </div>

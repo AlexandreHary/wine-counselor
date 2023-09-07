@@ -4,6 +4,5 @@ class Offer < ApplicationRecord
   has_one_attached :offer_photo
   validates :quantity, presence: true
   validates :price, presence: true
-  validates :address, presence: true
   validates :url, presence: true
 end
