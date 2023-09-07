@@ -1,13 +1,13 @@
 <div class="caviste-page">
   <div class="container">
     <div class="row">
-    <h1 class="text-center pt-4 pb-3">Les vins que vous proposez</h1>
-      <% @offers.each do |offer| %>
-        <div class="col-lg-3 col-md-6 pb-3 ">
-          <div class="position-relative">
-            <div class="card-offer d-flex flex-column align-items-center gap-4 mx-auto mb-4 ">
+      <h1 class="text-center pt-4 pb-3">Les vins que vous proposez</h1>
+        <% @offers.each do |offer| %>
+          <div class="col-lg-3 col-md-6 pb-3 ">
+            <div class="position-relative">
+              <div class="card-offer d-flex flex-column align-items-center justify-content-between gap-3 mx-auto mb-4 ">
                 <%= cl_image_tag offer.wine.wine_photo.key, width: 285, height: 230, class: 'offer-card-img pt-2' %>
-                <h4 class="card-title"> <%= offer.wine.name%></h4>
+                <h4 class="card-title-offer"> <%= offer.wine.name%></h4>
                 <div class="lign">
                 </div>
               <div class="card-text pt-2 pb-2">
@@ -17,21 +17,15 @@
               <div class="lign">
               </div>
               <div class="row foricon">
-                <div class="col-md-6">
-                  <div class="icon">
-                    <%= image_tag("livraison.png") %>
-                    Livraison : <%= (offer.delivery - Date.today).to_i %> jours
-                  </div>
-                  <div class="icon">
-                    <%= image_tag("etiqueter.png") %>
-                    Prix : <%= offer.price %> €
-                  </div>
+                <div class="icon align-items-center justify-content-between">
+                  <%= image_tag("livraison.png") %>
+                  <%= image_tag("etiqueter.png") %>
+                  <%= image_tag("vin.png")%>
                 </div>
-                <div class="col-md-6 middle">
-                  <div class="icon">
-                    <%= image_tag("vin.png") %>
-                    Stock : <%= offer.quantity %> bouteilles
-                  </div>
+                <div class="icon align-items-center justify-content-between">
+                  <%= (offer.delivery - Date.today).to_i %> jours
+                  <%= offer.price %> €
+                  <%= offer.quantity %> bouteilles
                 </div>
               </div>
               <%= link_to 'Détail du vin', caviste_offer_path(offer), class: 'btn' %>
