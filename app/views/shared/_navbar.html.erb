@@ -12,7 +12,7 @@
         <% if user_signed_in?  %>
             <% if current_user.caviste? %>
               <li class="nav-item">
-                <%= link_to "Nouvelle offre",  new_caviste_offer_path, class: "nav-link" %>
+                <%= link_to "Nouvelle offre", new_caviste_offer_path, class: "nav-link" %>
               </li>
             <% end %>
             <% if current_user.visitor? %>
