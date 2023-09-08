@@ -5,7 +5,7 @@
       <div class="col-md-3 line d-flex flex-column gap-3">
         <div class="card-selected position-relative">
           <% if booking.wine.wine_photo.present? %>
-            <div class="card-img-selected pt-2"><%= cl_image_tag booking.wine.wine_photo.key, width: 150, height: 150 %></div>
+            <div class="card-img-selected pt-2"><%= cl_image_tag booking.wine.wine_photo.key, width: 150, height: 150, class: "object-fit-cover" %></div>
           <% else %>
             <div class="card-img-selected pt-2" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= image_path "wine.png" %>'); max-height: 150px; max-width: 260px;"></div>
           <% end %>
@@ -27,7 +27,7 @@
                 <% else %>
                   <div class="offer-card-img pt-2" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= image_path "wine.png" %>'); max-height: 150px; max-width: 200px;"></div>
                 <% end %>
-                <div class="row foricon justify-content-center">
+                <div class="row foricon justify-content-center mt-2">
                   <div class="row icon align-items-center justify-content-between text-center">
                     <div class="col-4">
                       <%= image_tag("livraison.png") %>
@@ -51,7 +51,7 @@
                     </div>
                   </div>
                 </div>
-              <a href="<%= offer.url %>" class="btn">Cliquez ici</a>
+              <a href="<%= offer.url %>" class="btn mt-3">Acheter ici</a>
               </div>
             </div>
           <% end %>
