@@ -27,8 +27,6 @@
             <div class="text-center my-3">
               <p><cite title="Bonjour <%= current_user.first_name %>" class="m-0 p-3 mx-0">Bonjour <%= current_user.first_name %></cite></p>
             </div>
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
               <%= link_to "Se déconnecter", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
           </li>

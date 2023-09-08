@@ -11,7 +11,7 @@ class Caviste::OffersController < ApplicationController
 
   def new
     @offer = Offer.new
-    @wines = Wine.all
+    @wines = Wine.all.order(:name)
   end
 
   def create
@@ -25,6 +25,7 @@ class Caviste::OffersController < ApplicationController
 
     @offer = Offer.new(offer_params)
     @offer.user = current_user
+    @wines = Wine.all.order(:name)
     if @offer.save
       puts "Offre enregistré !" # Debug output
       redirect_to caviste_offers_path, notice: "Publié avec succès !"
@@ -34,12 +35,15 @@ class Caviste::OffersController < ApplicationController
   end
 
   def edit
+    @wines = Wine.all.order(:name)
     # set_offer
   end
 
   def update
     # raise
     @offer = Offer.find(params["id"])
+    @wines = Wine.all.order(:name)
+
     if @offer.update(offer_params)
       # selected_wine = Wine.find(@offer.wine_id)
       # @offer.update(wine_image_path: selected_wine.image_path)

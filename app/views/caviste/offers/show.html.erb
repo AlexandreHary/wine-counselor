@@ -2,7 +2,7 @@
 <div class="container py-5">
   <div class="row">
     <div class="col">
-      <div class="card-display" style="background-image: url('<%= cl_image_path @offer.wine.wine_photo.key %>'); height: 430px; width: 500px; background-position: cover; ">
+      <div class="card-display h-100" style="background-image: url('<%= cl_image_path @offer.wine.wine_photo.key %>'); height: 430px; width: 500px; background-size: cover; background-position: center;">
       </div>
     </div>
     <div class="col">
@@ -12,15 +12,15 @@
         </div>
         <div class="p-3">
           <div class="icon pb-2">
-            <%= image_tag("livraison.png") %>
+            <%= image_tag("livraison.png", class: "me-2") %>
             <%= (@offer.delivery - Date.today).to_i %> jours
           </div>
           <div class="icon pb-4">
-            <%= image_tag("etiqueter.png") %>
+            <%= image_tag("etiqueter.png", class: "me-2") %>
             <%= @offer.price %> €
           </div>
         <div class="icon pb-2">
-          <%= image_tag("vin.png") %>
+          <%= image_tag("vin.png", class: "me-2") %>
           <%= @offer.quantity %> vins
         </div>
         <p class='pt-2 align-items-center'><a href="<%= @offer.url %>">Accéder à mon offre pour le vin </a></p>
